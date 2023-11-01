@@ -43,6 +43,12 @@ class UserDaoTest {
         int actual= dao.register("Caleb","Njpe", "caleb@gmail.com","0895666431",1);
         int expected=1;
         assertEquals(actual,expected);
+        if(actual==expected){
+            int id=dao.getUserId("caleb@gmail.com");
+            User u1= new User(id,"Caleb","Njpe","caleb@gmail.com","0895666431",1,1);
+            User u2=dao.getUser(id);
+            assertEquals(u1,u2);
+        }
     }
 
     @AfterEach
@@ -87,6 +93,12 @@ class UserDaoTest {
         boolean actual= dao.disAbleMember(2,1);
         boolean expected= true;
         assertEquals(actual,expected);
+        if(actual==expected){
+            User u1= new User(1,"Carlson","carl","carl@gmail.com","0895666431",1,2);
+            User u2=dao.getUser(1);
+            assertEquals(u1,u2);
+        }
+
     }
     @AfterEach
     void unSuspendUserAfterSuspending() {
@@ -110,6 +122,7 @@ class UserDaoTest {
         boolean actual= dao.disAbleMember(2,2);
         boolean expected= false;
         assertEquals(actual,expected);
+
     }
 /**Deleting a user**/
    @Test
@@ -118,6 +131,11 @@ class UserDaoTest {
         int actual= dao.deleteUser(dao.getUserId("naomi@gmail.com"));
         int expected  =1;
         assertEquals(actual,expected);
+       if(actual==expected){
+           int exp= dao.getUserId("naomi@gmail.com");
+           int act=-1;
+           assertEquals(exp,act);
+       }
     }
 /**registering deleted user*/
    @AfterEach
@@ -132,6 +150,12 @@ class UserDaoTest {
         int expected= dao.unsuspendUser(3);
         int actual =1;
         assertEquals(actual,expected);
+        if(actual==expected){
+            User u1= dao.getUser(3);
+            User u2= new User(3,"Tom","tom", "tom@gmail.com","0892966581",1,1);
+            assertEquals(u1,u2);
+        }
+
     }
     /**suspending the unsuspended user above in unsuspendUser() method**/
     @AfterEach

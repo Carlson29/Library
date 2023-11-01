@@ -97,7 +97,6 @@ public class UserDao extends Dao implements UserDaoInterface {
         PreparedStatement ps = null;
         ResultSet rs = null;
         User u = null;
-
         try{
             con = getConnection();
 
@@ -106,13 +105,10 @@ public class UserDao extends Dao implements UserDaoInterface {
             ps.setString(1, email);
             ps.setString(2, password);
             rs = ps.executeQuery();
-
             if(rs.next())
             {
                 u = new User(rs.getInt("userId"), rs.getString("userName"), rs.getString("password"), rs.getString("email"), rs.getString("phoneNumber"), rs.getInt("userType"), rs.getInt("disable"));
-
             }
-
         }catch (SQLException e) {
             System.out.println("Exception occured in the login() method: " + e.getMessage());
         } finally {
@@ -291,6 +287,47 @@ public class UserDao extends Dao implements UserDaoInterface {
             }
         }
         return id;
+    }
+
+    public User getUser(int userId){
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int id = -1;
+        User u=null;
+
+        try{
+            con = getConnection();
+
+            String query = "Select * from users where userId =? ";
+            ps = con.prepareStatement(query);
+            ps.setInt(1,userId);
+            rs = ps.executeQuery();
+
+            if(rs.next())
+            {
+                u = new User(rs.getInt("userId"), rs.getString("userName"), rs.getString("password"), rs.getString("email"), rs.getString("phoneNumber"), rs.getInt("userType"), rs.getInt("disable"));
+
+            }
+
+        }catch (SQLException e) {
+            System.out.println("Exception occured in the getUserId() method: " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    freeConnection(con);
+                }
+            } catch (SQLException e) {
+                System.out.println("Exception occured in the final section of the getUserId() method: " + e.getMessage());
+            }
+        }
+        return u;
     }
 
 }
