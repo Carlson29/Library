@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/daos/MockTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daos/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/UserDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +73,20 @@
       <recent name="daos" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MockTest.testLogin">
+  <component name="RunManager" selected="Application.LibraryApp">
+    <configuration name="LibraryApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App.LibraryApp" />
+      <module name="ProductDaoWithMocking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="App.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MockTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProductDaoWithMocking" />
       <extension name="coverage">
@@ -104,22 +115,6 @@
       <option name="MAIN_CLASS_NAME" value="daos.UserDaoTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserDaoTest.delete_User (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProductDaoWithMocking" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="daos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="daos" />
-      <option name="MAIN_CLASS_NAME" value="daos.UserDaoTest" />
-      <option name="METHOD_NAME" value="delete_User" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LibraryApp" />
         <item itemvalue="JUnit.MockTest.testLogin" />
         <item itemvalue="JUnit.UserDaoTest.logIn_WhenDetailsMatch" />
         <item itemvalue="JUnit.UserDaoTest" />
         <item itemvalue="JUnit.UserDaoTest.unsuspendUser" />
-        <item itemvalue="JUnit.UserDaoTest.delete_User (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -185,6 +180,7 @@
       <workItem from="1698756180166" duration="11207000" />
       <workItem from="1698767566805" duration="24000" />
       <workItem from="1698850682567" duration="610000" />
+      <workItem from="1698877876004" duration="2310000" />
     </task>
     <task id="LOCAL-00001" summary="running test">
       <option name="closed" value="true" />
@@ -202,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698690675273</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="making and running moxk test">
+      <option name="closed" value="true" />
+      <created>1698878188146</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698878188146</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +215,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="running test" />
-    <option name="LAST_COMMIT_MESSAGE" value="running test" />
+    <MESSAGE value="making and running moxk test" />
+    <option name="LAST_COMMIT_MESSAGE" value="making and running moxk test" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/library4$UserDaoTest.ic" NAME="UserDaoTest Coverage Results" MODIFIED="1698676405237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
