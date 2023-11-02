@@ -1,4 +1,4 @@
-package daos;
+package business;
 
 import java.sql.Date;
 import java.util.Objects;
