@@ -13,7 +13,14 @@ public class LibraryApp {
         User u1;
         choices1.add("0- Register In library");
         choices1.add("1- Log into the library");
-        choose(choices1);
+       int num= choose(choices1);
+       if(num==0){
+
+
+       }
+       else if(num==1){
+
+       }
         choices2.add("0- view Details of all Books");
         choices2.add("1- view Details on active Loans");
         choices2.add("2- view Details on all your loans");
