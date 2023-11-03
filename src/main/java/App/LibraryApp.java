@@ -102,7 +102,7 @@ public class LibraryApp {
                 }
                 //pay late fee
                 else if (choice2 == 6) {
-
+                    //creditCardValidator = new CreditCardValidator();
                 }
                 //log out
                 else if (choice2 == 7) {

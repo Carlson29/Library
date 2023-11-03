@@ -25,7 +25,7 @@ public class MockTest {
         ResultSet rs = mock(ResultSet.class);
         User u= new User(1,"Carlson","carl","carl@gmail.com","0895666431",1,1);
 
-        when(dbConn.prepareStatement("Select * from users where email =? and password=? and disable=1 ")).thenReturn(ps);
+        when(dbConn.prepareStatement("Select * from users where email =? and password=? ")).thenReturn(ps);
 
         when(ps.executeQuery()).thenReturn(rs);
 

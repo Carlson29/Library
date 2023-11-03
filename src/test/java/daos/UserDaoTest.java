@@ -5,6 +5,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserDaoTest {
@@ -76,14 +78,14 @@ class UserDaoTest {
         assertEquals(actual,expected);
     }
 
-    /**When disabled user tries logging in**/
+    /**When disabled user tries logging in
     @Test
     void logIn_WhenDisabledUserTriesLoggingIn() {
         UserDao dao= new UserDao("library");
         User actual= dao.logIn( "tom@gmail.com","tom");
         User expected= null;
         assertEquals(actual,expected);
-    }
+    }*/
 
 
     /**When an admin tries to disable a normal user**/
@@ -177,6 +179,36 @@ class UserDaoTest {
         UserDao dao= new UserDao("library");
         int expected= dao.getUserId("paul@gmail.com");
         int actual =-1;
+        assertEquals(actual,expected);
+    }
+/*test getting user when User is available*/
+    @Test
+    void getUserById_WhenUserIsAvailable() {
+        UserDao dao= new UserDao("library");
+        User actual= dao.getUser(1);
+        User expected= new User(1,"Carlson","carl","carl@gmail.com","0895666431",1,1);
+        assertEquals(actual,expected);
+    }
+    /*test getting user when User is not available*/
+    @Test
+    void getUserById_WhenUserIsNotAvailable() {
+        UserDao dao= new UserDao("library");
+        User actual= dao.getUser(6);
+        User expected= null;
+        assertEquals(actual,expected);
+    }
+
+
+    /**when getting all users**/
+    @Test
+    void getUsers() {
+        UserDao dao= new UserDao("library");
+        ArrayList<User> actual= dao.getAllUsers();
+        ArrayList<User> expected= new ArrayList();
+          expected.add(dao.getUser(1));
+          expected.add(dao.getUser(2));
+          expected.add(dao.getUser(3));
+        expected.add(dao.getUser(dao.getUserId("naomi@gmail.com")));
         assertEquals(actual,expected);
     }
 

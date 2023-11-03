@@ -101,7 +101,7 @@ public class UserDao extends Dao implements UserDaoInterface {
         try{
             con = getConnection();
 
-            String query = "Select * from users where email = ? and password= ? and disable=1";
+            String query = "Select * from users where email = ? and password= ?";
             ps = con.prepareStatement(query);
             ps.setString(1, email);
             ps.setString(2, password);

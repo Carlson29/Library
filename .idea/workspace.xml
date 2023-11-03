@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDaoInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/daos/LoanFeeDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/LoanFeeDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daos/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/UserDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,26 +51,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/OneDrive - Dundalk Institute of Technology/d00243400/Y3/web patterns/library2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "OverrideImplement.generate.javadoc": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/user/OneDrive - Dundalk Institute of Technology/d00243400/Y3/web patterns/library",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -78,8 +79,8 @@
       <recent name="daos" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoanFeeDaoTest.getLoan">
-    <configuration name="LoanFeeDaoTest.deleteLateFee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MockTest.testLogin">
+    <configuration name="MockTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProductDaoWithMocking" />
       <extension name="coverage">
         <pattern>
@@ -88,14 +89,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="daos" />
-      <option name="MAIN_CLASS_NAME" value="daos.LoanFeeDaoTest" />
-      <option name="METHOD_NAME" value="deleteLateFee" />
+      <option name="MAIN_CLASS_NAME" value="daos.MockTest" />
+      <option name="METHOD_NAME" value="testLogin" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoanFeeDaoTest.deleteLateFee_WhenNotPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProductDaoWithMocking" />
       <extension name="coverage">
         <pattern>
@@ -104,14 +105,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="daos" />
-      <option name="MAIN_CLASS_NAME" value="daos.LoanFeeDaoTest" />
-      <option name="METHOD_NAME" value="deleteLateFee_WhenNotPresent" />
+      <option name="MAIN_CLASS_NAME" value="daos.UserDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoTest.getUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProductDaoWithMocking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="daos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="daos" />
+      <option name="MAIN_CLASS_NAME" value="daos.UserDaoTest" />
+      <option name="METHOD_NAME" value="getUserById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoanFeeDaoTest.deleteReturnDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserDaoTest.getUserById_WhenUserIsNotAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProductDaoWithMocking" />
       <extension name="coverage">
         <pattern>
@@ -120,14 +136,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="daos" />
-      <option name="MAIN_CLASS_NAME" value="daos.LoanFeeDaoTest" />
-      <option name="METHOD_NAME" value="deleteReturnDate" />
+      <option name="MAIN_CLASS_NAME" value="daos.UserDaoTest" />
+      <option name="METHOD_NAME" value="getUserById_WhenUserIsNotAvailable" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoanFeeDaoTest.getLoan" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserDaoTest.logIn_WhenDisabledUserTriesLoggingIn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProductDaoWithMocking" />
       <extension name="coverage">
         <pattern>
@@ -136,24 +152,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="daos" />
-      <option name="MAIN_CLASS_NAME" value="daos.LoanFeeDaoTest" />
-      <option name="METHOD_NAME" value="getLoan" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoanFeeDaoTest.getLoan_WhenNoLoanIsPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProductDaoWithMocking" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="daos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="daos" />
-      <option name="MAIN_CLASS_NAME" value="daos.LoanFeeDaoTest" />
-      <option name="METHOD_NAME" value="getLoan_WhenNoLoanIsPresent" />
+      <option name="MAIN_CLASS_NAME" value="daos.UserDaoTest" />
+      <option name="METHOD_NAME" value="logIn_WhenDisabledUserTriesLoggingIn" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LoanFeeDaoTest.getLoan" />
-        <item itemvalue="JUnit.LoanFeeDaoTest.getLoan_WhenNoLoanIsPresent" />
-        <item itemvalue="JUnit.LoanFeeDaoTest.deleteLateFee_WhenNotPresent" />
-        <item itemvalue="JUnit.LoanFeeDaoTest.deleteLateFee" />
-        <item itemvalue="JUnit.LoanFeeDaoTest.deleteReturnDate" />
+        <item itemvalue="JUnit.MockTest.testLogin" />
+        <item itemvalue="JUnit.UserDaoTest" />
+        <item itemvalue="JUnit.UserDaoTest.logIn_WhenDisabledUserTriesLoggingIn" />
+        <item itemvalue="JUnit.UserDaoTest.getUserById_WhenUserIsNotAvailable" />
+        <item itemvalue="JUnit.UserDaoTest.getUserById" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +189,8 @@
       <workItem from="1698767566805" duration="24000" />
       <workItem from="1698850682567" duration="610000" />
       <workItem from="1698877876004" duration="5806000" />
-      <workItem from="1698958181860" duration="12022000" />
+      <workItem from="1698958181860" duration="12590000" />
+      <workItem from="1699010611013" duration="4149000" />
     </task>
     <task id="LOCAL-00001" summary="running test">
       <option name="closed" value="true" />
@@ -239,11 +240,30 @@
       <option name="project" value="LOCAL" />
       <updated>1698966931422</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="making more test">
+      <option name="closed" value="true" />
+      <created>1698970559546</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698970559546</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -252,7 +272,8 @@
     <MESSAGE value="creating app" />
     <MESSAGE value="creating LoanFeeDao, Loan, LoanFeeDaoInterface and LoanFeeDaoTest" />
     <MESSAGE value="creating app and tests for LoanFeeDaoTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating app and tests for LoanFeeDaoTest" />
+    <MESSAGE value="making more test" />
+    <option name="LAST_COMMIT_MESSAGE" value="making more test" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/library4$UserDaoTest.ic" NAME="UserDaoTest Coverage Results" MODIFIED="1698676405237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
