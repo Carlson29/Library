@@ -2,11 +2,13 @@ package daos;
 
 import business.Loan;
 import business.LoanFee;
+import business.User;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class LoanFeeDao extends Dao implements LoanFeeDaoInterface{
 
@@ -263,6 +265,83 @@ l = new Loan(rs.getInt("loanId"),rs.getInt("userId"),rs.getInt("bookId"),rs.getD
 
         return l;
 
+    }
+
+    public ArrayList<Loan> getOverDueLoans(int userId){
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        ArrayList<Loan> loans= new ArrayList();
+        try{
+            con = getConnection();
+
+            String query = "Select * from loans where dueDate<now() and userId=?  ";
+            ps = con.prepareStatement(query);
+            ps.setInt(1, userId);
+            rs = ps.executeQuery();
+
+            while(rs.next())
+            {
+                Loan l= new Loan(rs.getInt("loanId"), rs.getInt("userId"), rs.getInt("bookId"), rs.getDate("dateOfLoan"),  rs.getDate("dueDate"),  rs.getDate("returnDate"));
+                loans.add(l);
+            }
+
+        }catch (SQLException e) {
+            System.out.println("Exception occured in the getOverDueLoans() method: " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    freeConnection(con);
+                }
+            } catch (SQLException e) {
+                System.out.println("Exception occured in the final section of the getOverDueLoans() method: " + e.getMessage());
+            }
+        }
+        return loans;
+    }
+
+    public String getBookName(int bookId){
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String title=null;
+        try{
+            con = getConnection();
+
+            String query = "Select title from books where bookId=?  ";
+            ps = con.prepareStatement(query);
+            ps.setInt(1, bookId);
+            rs = ps.executeQuery();
+
+            if(rs.next())
+            {
+                title=rs.getString("title");
+            }
+
+        }catch (SQLException e) {
+            System.out.println("Exception occured in the getOverDueLoans() method: " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    freeConnection(con);
+                }
+            } catch (SQLException e) {
+                System.out.println("Exception occured in the final section of the getOverDueLoans() method: " + e.getMessage());
+            }
+        }
+        return title;
     }
 
 }
