@@ -7,6 +7,7 @@ import daos.LoanFeeDao;
 import daos.UserDao;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -113,14 +114,38 @@ public class LibraryApp {
                         //creditCardValidator = new CreditCardValidator();
                         ArrayList <Loan> lateLoans = dao2.getOverDueLoans(u1.getUserId());
                         ArrayList <String> lateBooks = new ArrayList();
-                        for(Loan loan:lateLoans){
-                            LocalDate start = LocalDate.parse(loan.getDueDate().toString());
-                            LocalDate end   = LocalDate.parse("2023-06-15");
+                        ArrayList <Double> lateAmount = new ArrayList();
+                        for(int i=0; i<lateLoans.size(); i++){
+                            LocalDate start = LocalDate.parse(lateLoans.get(i).getDueDate().toString());
+                            LocalDateTime end = LocalDateTime.now();
 
                             long diffInDays = ChronoUnit.DAYS.between(start, end);
-
-                            lateBooks.add(dao2.getBookName(loan.getBookId()));
+                            String diffInDays2= diffInDays+"";
+                            double amount = Integer.parseInt(diffInDays2)*0.5;
+                            lateAmount.add(amount);
+                            lateBooks.add("-"+ i +" "+dao2.getBookName(lateLoans.get(i).getBookId()) + " price: "+ amount);
                         }
+                       int choosen =choose(lateBooks);
+                        int loanId=lateLoans.get(choosen).getLoanId();
+                         double pay=lateAmount.get(choosen);
+                            System.out.println("Enter card number details");
+                            long cardNum=sc.nextLong();
+                            if(validateCard(cardNum)==true){
+                                System.out.println("Enter security code");
+                                if(sc.hasNextInt()){
+                                    int securityCode=sc.nextInt();
+                                    String securityCode2= securityCode+"";
+                                    if(securityCode2.length()!=2){
+                                        System.out.println("invalid security code");
+                                    }
+                                    else{
+                                        dao2.p
+                                    }
+                                }
+                            }
+                            else{
+                                System.out.println("invalid card number");
+                            }
                     }
                     //log out
                     else if (choice2 == 7) {
