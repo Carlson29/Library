@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 public class UserDao extends Dao implements UserDaoInterface {
@@ -328,6 +329,46 @@ public class UserDao extends Dao implements UserDaoInterface {
             }
         }
         return u;
+    }
+
+
+    public ArrayList<User> getAllUsers(){
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int id = -1;
+        ArrayList<User> users= new ArrayList();
+        try{
+            con = getConnection();
+
+            String query = "Select * from users ";
+            ps = con.prepareStatement(query);
+            rs = ps.executeQuery();
+
+            while(rs.next())
+            {
+            User  u = new User(rs.getInt("userId"), rs.getString("userName"), rs.getString("password"), rs.getString("email"), rs.getString("phoneNumber"), rs.getInt("userType"), rs.getInt("disable"));
+            users.add(u);
+            }
+
+        }catch (SQLException e) {
+            System.out.println("Exception occured in the getUserId() method: " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    freeConnection(con);
+                }
+            } catch (SQLException e) {
+                System.out.println("Exception occured in the final section of the getUserId() method: " + e.getMessage());
+            }
+        }
+        return users;
     }
 
 }

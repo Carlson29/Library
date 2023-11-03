@@ -25,11 +25,10 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface{
      *               method pays a user late fee
      */
     @Override
-    public int payLateFee(int loanId) {
+    public int insertReturnDate(int loanId) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        boolean state = false;
         int rowsAffected = 0;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDateTime now = LocalDateTime.now();
@@ -224,7 +223,7 @@ l = new Loan(rs.getInt("loanId"),rs.getInt("userId"),rs.getInt("bookId"),rs.getD
         return l;
     }
 
-    public LoanFee checkLateLoanfee(int loanId) {
+    public LoanFee getLateLoanfee(int loanId) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
