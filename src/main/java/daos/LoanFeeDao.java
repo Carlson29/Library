@@ -275,7 +275,7 @@ l = new Loan(rs.getInt("loanId"),rs.getInt("userId"),rs.getInt("bookId"),rs.getD
         try{
             con = getConnection();
 
-            String query = "Select * from loans where dueDate<now() and userId=?  ";
+            String query = "Select * from loans where dueDate<now() and userId=? and returnDate=null";
             ps = con.prepareStatement(query);
             ps.setInt(1, userId);
             rs = ps.executeQuery();

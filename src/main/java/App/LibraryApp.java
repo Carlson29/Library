@@ -33,7 +33,7 @@ public class LibraryApp {
         choices2.add("5- View current late fees ");
         choices2.add("6- Pay late fee");
         choices2.add("7- Log out");
-        while (prompt ==true){
+       while (prompt ==true){
             int num = choose(choices1);
         if (num == 0) {
             System.out.println("Enter UserName");
@@ -79,9 +79,9 @@ public class LibraryApp {
 
                 //if it's an admin
                 if (u1.getUserType() == 2) {
-                    choices2.add("8- view Details of all Books");
-                    choices2.add("9- view Details on active Loans");
-                    choices2.add("10- view Details on all your loans");
+                    choices2.add("8- add a book to library");
+                    choices2.add("9- Increase a copy of a book");
+                    choices2.add("10- Disable a member");
                 }
                 while (loggedIn == true) {
                     int choice2 = choose(choices2);
@@ -107,7 +107,24 @@ public class LibraryApp {
                     }
                     //view current late fee
                     else if (choice2 == 5) {
+                        System.out.println("current late fees are");
+                        ArrayList <Loan> lateLoans = dao2.getOverDueLoans(u1.getUserId());
+                        ArrayList <String> lateBooks = new ArrayList();
+                        ArrayList <Double> lateAmount = new ArrayList();
+                        for(int i=0; i<lateLoans.size(); i++){
+                            LocalDate start = LocalDate.parse(lateLoans.get(i).getDueDate().toString());
+                            LocalDateTime end = LocalDateTime.now();
 
+                            long diffInDays = ChronoUnit.DAYS.between(start, end);
+                            String diffInDays2= diffInDays+"";
+                            //calculating amount €0.5 a day
+                            double amount = Integer.parseInt(diffInDays2)*0.5;
+                            lateAmount.add(amount);
+                            lateBooks.add("-"+ i +" "+dao2.getBookName(lateLoans.get(i).getBookId()) + " price: €"+ amount);
+                        }
+                        for(String late: lateBooks){
+                            System.out.println(late);
+                        }
                     }
                     //pay late fee and return book
                     else if (choice2 == 6) {
@@ -121,31 +138,39 @@ public class LibraryApp {
 
                             long diffInDays = ChronoUnit.DAYS.between(start, end);
                             String diffInDays2= diffInDays+"";
+                            //calculating amount €0.5 a day
                             double amount = Integer.parseInt(diffInDays2)*0.5;
                             lateAmount.add(amount);
-                            lateBooks.add("-"+ i +" "+dao2.getBookName(lateLoans.get(i).getBookId()) + " price: "+ amount);
+                            lateBooks.add("-"+ i +" "+dao2.getBookName(lateLoans.get(i).getBookId()) + " price: €"+ amount);
                         }
+                        if(lateBooks.size()>0){
                        int choosen =choose(lateBooks);
                         int loanId=lateLoans.get(choosen).getLoanId();
                          double pay=lateAmount.get(choosen);
                             System.out.println("Enter card number details");
                             long cardNum=sc.nextLong();
-                            if(validateCard(cardNum)==true){
+                            if(validateCard(cardNum)==true) {
                                 System.out.println("Enter security code");
-                                if(sc.hasNextInt()){
-                                    int securityCode=sc.nextInt();
-                                    String securityCode2= securityCode+"";
-                                    if(securityCode2.length()!=2){
+                                if (sc.hasNextInt()) {
+                                    int securityCode = sc.nextInt();
+                                    String securityCode2 = securityCode + "";
+                                    if (securityCode2.length() != 3) {
                                         System.out.println("invalid security code");
-                                    }
-                                    else{
-                                        dao2.p
+                                    } else {
+                                        dao2.insertReturnDate(loanId);
+                                        dao2.payLateFee(loanId, pay);
+                                        System.out.println("Paid  ");
                                     }
                                 }
                             }
                             else{
                                 System.out.println("invalid card number");
                             }
+                            }
+                        else{
+                            System.out.println("no late fees available");
+                        }
+
                     }
                     //log out
                     else if (choice2 == 7) {
@@ -164,7 +189,7 @@ public class LibraryApp {
                      ArrayList <User> users=dao.getAllUsers();
                         ArrayList <User> normalUsers=new ArrayList();
                      for(User u:users){
-                         if(u.getUserType()==1){
+                         if(u.getUserType()==1 && u.getDisable()==1){
                             normalUsers.add(u);
                          }
                      }
@@ -186,79 +211,94 @@ public class LibraryApp {
 
         }
     }
+        /*System.out.println("Enter card number details");
+        long cardNum=sc.nextLong();
+        System.out.println(validateCard(cardNum));*/
 
 
     }
-    public static int choose(ArrayList<String> choices){
-        Scanner sc= new Scanner(System.in);
-        System.out.println("Please enter valid choice");
-        for(String choice: choices){
+    public static int choose(ArrayList<String> choices) {
+        Scanner sc = new Scanner(System.in);
+        boolean state = false;
+        int num = -1;
+        while (state==false){
+            System.out.println("Please enter valid choice");
+        for (String choice : choices) {
             System.out.println(choice);
         }
 
-        int num=-1;
-        if(sc.hasNextInt()) {
-            num=sc.nextInt();
+        if (sc.hasNextInt()) {
+            num = sc.nextInt();
+            sc.nextLine();
             if (num < 0 || num >= choices.size()) {
                 System.out.println("please enter valid number");
-                choose(choices);
-            }
-            else{
+                //choose(choices);
+            } else {
                 return num;
             }
-        }
-        else {
+        } else {
+            sc.nextLine();
             System.out.println("please enter number");
-            choose(choices);
+            //choose(choices);
         }
+
+    }
         return num;
     }
 
 
     public static int chooseUser(ArrayList<User> choices){
         Scanner sc= new Scanner(System.in);
-        System.out.println("Please enter valid choice");
-        for(User choice: choices){
-            System.out.println(choice.toString());
-        }
+        boolean state = false;
+        int num = -1;
+        while (state==false) {
+            System.out.println("Please enter valid choice");
+            int i=0;
+            for (User choice : choices) {
+                System.out.println("- "+ i +" "+choice.toString());
+                i++;
+            }
 
-        int num=-1;
-        if(sc.hasNextInt()) {
-            num=sc.nextInt();
-            if (num < 0 || num >= choices.size()) {
-                System.out.println("please enter valid number");
-                chooseUser(choices);
+            if (sc.hasNextInt()) {
+                num = sc.nextInt();
+                sc.nextLine();
+                if (num < 0 || num >= choices.size()) {
+                    System.out.println("please enter valid number");
+
+                } else {
+                    return num;
+                }
+            } else {
+                sc.nextLine();
+                System.out.println("please enter number");
+
             }
-            else{
-                return num;
-            }
-        }
-        else {
-            System.out.println("please enter number");
-            chooseUser(choices);
         }
         return num;
     }
-
+/**method to validate a credit card number*/
     public static boolean validateCard(long number){
        boolean state=false;
        String num=number +"";
        int odd=0;
         int even=0;
        if(num.length()>= 13 && num.length() <= 16) {
-         if(num.substring(0,1).equalsIgnoreCase("4") || num.substring(0,1).equalsIgnoreCase("5") || num.substring(0,2).equalsIgnoreCase("37") || num.substring(0,1).equalsIgnoreCase("6")){
+         if(Integer.parseInt(num.substring(0,1))==4 || Integer.parseInt(num.substring(0,1))==5 || Integer.parseInt(num.substring(0,2))==37 || Integer.parseInt(num.substring(0,1))==6){
              //adding numbers in odd position
              for (int i =num.length() - 1; i >= 0; i -= 2) {
                  odd += Integer.parseInt(num.charAt(i) + "");
              }
              //adding numbers in double number at even position
              for (int i = num.length()  - 2; i >= 0; i -= 2 ) {
-                 int check = Integer.parseInt(num.charAt(i) + "") * 2;
-                 if(check>9){
+                int check= Integer.parseInt(num.charAt(i) + "") * 2;
+                 if(check<=9){
+                     even += check;
+                 }
+                 else{
                      even += check / 10 + check % 10;
                  }
              }
-             return even+odd %10==0;
+             return (even+odd) %10==0;
 
          }
        }
