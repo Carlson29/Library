@@ -109,13 +109,15 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface{
 
         return rowsAffected;
     }
-
+/**deletes return Date of a loan
+ * @param loanId
+ * @return 0 if no loan was updated or 1 if a loan was updated
+ * **/
     public int deleteReturnDate(int loanId) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         int rowsAffected = 0;
-        int rowsAffected1 = 0;
         try {
             con = getConnection();
 
@@ -127,7 +129,7 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface{
 
 
         } catch (SQLException e) {
-            System.out.println("Exception occured in  the payLateFee() method: " + e.getMessage());
+            System.out.println("Exception occured in  the deleteReturnDate() method: " + e.getMessage());
         } finally {
             try {
                 if (rs != null) {
@@ -140,14 +142,17 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface{
                     freeConnection(con);
                 }
             } catch (SQLException e) {
-                System.out.println("Exception occured in  the payLateFee() method:  " + e.getMessage());
+                System.out.println("Exception occured in  the deleteReturnDate() method:  " + e.getMessage());
             }
         }
 
 
         return rowsAffected;
     }
-
+/* deletes late loan fee for a Loan
+*@param loanId
+*  @return 0 if no loan fee was deleted or 1 if a loan fee was deleted
+* **/
     public int deleteLateFee(int loanId) {
         Connection con = null;
         PreparedStatement ps = null;
@@ -183,7 +188,10 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface{
 
         return rowsAffected;
     }
-
+/** gets a Loan
+ * @param loanId
+ * @return Loan or null if no Loan is found
+ * **/
     public Loan getLoan(int loanId) {
         Connection con = null;
         PreparedStatement ps = null;
@@ -224,7 +232,10 @@ l = new Loan(rs.getInt("loanId"),rs.getInt("userId"),rs.getInt("bookId"),rs.getD
 
        return l;
     }
-
+/**gets a LoanFee
+ * @param loanId
+ * @return LoanFee or null if no LoanFee is found
+ * **/
     public LoanFee getLateLoanfee(int loanId) {
         Connection con = null;
         PreparedStatement ps = null;
@@ -266,7 +277,10 @@ l = new Loan(rs.getInt("loanId"),rs.getInt("userId"),rs.getInt("bookId"),rs.getD
         return l;
 
     }
-
+/**gets a all overdue Loans of a particular user
+ * @param userId
+ * @return an ArrayList of Loans
+ * **/
     public ArrayList<Loan> getOverDueLoans(int userId){
         Connection con = null;
         PreparedStatement ps = null;
@@ -305,7 +319,10 @@ l = new Loan(rs.getInt("loanId"),rs.getInt("userId"),rs.getInt("bookId"),rs.getD
         }
         return loans;
     }
-
+/**get a book's title when given a bookId
+ * @param bookId
+ * @return the book's title or null if no book was found
+ * **/
     public String getBookName(int bookId){
         Connection con = null;
         PreparedStatement ps = null;

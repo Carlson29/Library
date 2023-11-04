@@ -1,7 +1,7 @@
 package daos;
 
 import business.User;
-
+//@author carlson
 public interface UserDaoInterface {
     /**
      * Method adds a new user in to the system

@@ -1,20 +1,23 @@
 package business;
 
 import java.util.Objects;
-//carlson
+//@author carlson
 public class LoanFee {
     private int loanId;
     private Double loanFee;
-
+/*
+* @param loanId, int loanId
+* @param loanFee, double loanFee
+* */
     public LoanFee(int loanId, Double loanFee) {
         this.loanId = loanId;
         this.loanFee = loanFee;
     }
 
-    public LoanFee() {
+   /* public LoanFee() {
         this.loanId = 0;
         this.loanFee = 0.0;
-    }
+    }*/
 
     public int getLoanId() {
         return loanId;

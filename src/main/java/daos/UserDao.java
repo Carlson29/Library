@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
+//@author carlson
 public class UserDao extends Dao implements UserDaoInterface {
 
 
