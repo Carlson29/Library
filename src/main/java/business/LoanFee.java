@@ -1,7 +1,7 @@
 package business;
 
 import java.util.Objects;
-
+//carlson
 public class LoanFee {
     private int loanId;
     private Double loanFee;

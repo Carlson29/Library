@@ -129,13 +129,11 @@ public class UserDao extends Dao implements UserDaoInterface {
         return u;
     }
 
-    /**
-     * Disables a particular user
-     *
-     * @param userType
+    /**Disables a particular user
+     * @param userType, the userType of the person who is about to disable a user
      * @param disableId , the userId of user to be disabled
      * @return a boolean, true if the use was disabled and false for otherwise
-     **/
+     * **/
     @Override
     public boolean disAbleMember(int userType, int disableId) {
         Connection con = null;
@@ -180,7 +178,11 @@ public class UserDao extends Dao implements UserDaoInterface {
         }
         return state;
     }
-
+/**
+ * method to delete a user
+ * @param id, the userId
+ * @return 0 if user was not deleted, or 1 if user was deleted
+ * */
     public int deleteUser(int id){
         Connection con = null;
         PreparedStatement ps = null;
@@ -213,7 +215,11 @@ public class UserDao extends Dao implements UserDaoInterface {
 
         return rowsAffected;
     }
-
+/**
+ * method unsuspends a user
+ * @param id, the userId
+ * @return 1 if user was deleted 0 if user wasn't deleted
+ * **/
     public int unsuspendUser(int id){
         Connection con = null;
         PreparedStatement ps = null;
@@ -248,7 +254,10 @@ public class UserDao extends Dao implements UserDaoInterface {
 
         return rowsAffected;
     }
-
+/**gets a user id
+ * @param email, the user email
+ * @return -1 if no user was found with that email or returns an in
+ * **/
     public int getUserId(String email){
         Connection con = null;
         PreparedStatement ps = null;
@@ -288,7 +297,10 @@ public class UserDao extends Dao implements UserDaoInterface {
         }
         return id;
     }
-
+/*get a User
+*@param userId
+* @return User
+* */
     public User getUser(int userId){
         Connection con = null;
         PreparedStatement ps = null;
@@ -330,7 +342,10 @@ public class UserDao extends Dao implements UserDaoInterface {
         return u;
     }
 
-
+/**
+ * returns all Users
+ * @return an ArrayList of all users
+ * **/
     public ArrayList<User> getAllUsers(){
         Connection con = null;
         PreparedStatement ps = null;

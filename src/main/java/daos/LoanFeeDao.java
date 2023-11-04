@@ -24,7 +24,7 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface{
 
     /**
      * @param loanId @return int, number of rows affected
-     *               method pays a user late fee
+     *               inserts a user's return date
      */
     @Override
     public int insertReturnDate(int loanId) {

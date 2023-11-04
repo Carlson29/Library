@@ -3,7 +3,7 @@ package business;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
-
+//carlson
 public class User implements Serializable {
  private int userId;
  private String userName;
@@ -12,7 +12,7 @@ public class User implements Serializable {
  private String phoneNumber;
  private int userType;
  private int disable;
-
+/****/
     public User(int userId, String userName, String password, String email, String phoneNumber,int userType, int disable) {
         this.userId = userId;
         this.userName = userName;
