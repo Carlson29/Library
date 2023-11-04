@@ -48,7 +48,9 @@ public class LibraryApp {
             userType.add("1- Normal user");
             System.out.println("Enter userType");
             int type = choose(userType);
+            //for admins
             if (type == 0) {
+                //register
                 int state = dao.register(userName, password, email, phoneNumber, 2);
                 if (state == -1) {
                     System.out.println("Email is in use");
@@ -56,7 +58,9 @@ public class LibraryApp {
                 else if(state ==1){
                     System.out.println("Registered");
                 }
-            } else if (type == 1) {
+            }
+           // for normal users
+            else if (type == 1) {
                 int state = dao.register(userName, password, email, phoneNumber, 1);
                 if (state == -1) {
                     System.out.println("Email is in use");
@@ -71,6 +75,7 @@ public class LibraryApp {
             String email = sc.nextLine();
             System.out.println("Enter password");
             String password = sc.nextLine();
+            //log in
             u1=dao.logIn(email,password);
             if(u1!=null) {
                 if (u1.getDisable() == 1){
@@ -111,6 +116,7 @@ public class LibraryApp {
                         ArrayList <Loan> lateLoans = dao2.getOverDueLoans(u1.getUserId());
                         ArrayList <String> lateBooks = new ArrayList();
                         ArrayList <Double> lateAmount = new ArrayList();
+                        //loop through overdue loans
                         for(int i=0; i<lateLoans.size(); i++){
                             LocalDate start = LocalDate.parse(lateLoans.get(i).getDueDate().toString());
                             LocalDateTime end = LocalDateTime.now();
@@ -143,12 +149,14 @@ public class LibraryApp {
                             lateBooks.add("-"+ i +" "+dao2.getBookName(lateLoans.get(i).getBookId()) + " price: €"+ amount);
                         }
                         if(lateBooks.size()>0) {
+                            //choose book to pay
                             int choosen = choose(lateBooks);
                             int loanId = lateLoans.get(choosen).getLoanId();
                             double pay = lateAmount.get(choosen);
                             System.out.println("Enter card number details");
                             if (sc.hasNextLong()){
                                 long cardNum = sc.nextLong();
+                                //validate card number
                             if (validateCard(cardNum) == true) {
                                 System.out.println("Enter security code");
                                 if (sc.hasNextInt()) {
@@ -221,9 +229,6 @@ public class LibraryApp {
 
         }
     }
-        /*System.out.println("Enter card number details");
-        long cardNum=sc.nextLong();
-        System.out.println(validateCard(cardNum));*/
 
 
     }
