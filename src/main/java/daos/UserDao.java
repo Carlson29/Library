@@ -23,13 +23,12 @@ public class UserDao extends Dao implements UserDaoInterface {
 
     /**
      * Method adds a new user in to the system
-     *
-     * @param userName
-     * @param password
-     * @param email
-     * @param phoneNumber
-     *   * @param userType, user type (1 for normal user 2 for admin)
-     * @return the id of the newly registered user or returns -1 if the email is already registered or the dateOfBirth is after present day
+     * @param userName, user's name a maximum of 24 characters
+     *  @param password, user's password a maximum of 128 characters
+     * @param email, user's email a maximum of 128 character
+     *   @param phoneNumber, user's phone number maximum of 24 characters
+     * @param userType, user type (1 for normal user 2 for admin)
+     * @return the 1 if user was successfully registered  or returns -1 if the email is already registered
      **/
     @Override
     public int register(String userName, String password, String email, String phoneNumber,int userType) {
@@ -88,9 +87,9 @@ public class UserDao extends Dao implements UserDaoInterface {
     /**
      * Method logs in an existing user in to the system
      *
-     * @param email,   user's email
-     * @param password
-     * @return a User if the details match or null if the details don't match
+     * @param email,    user's email
+     * @param password, user's password
+     * @return the userId if details are correct or returns -1 if details are wrong
      **/
     @Override
     public User logIn(String email, String password) {

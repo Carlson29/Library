@@ -7,7 +7,6 @@
     <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +184,7 @@
       <workItem from="1698877876004" duration="5806000" />
       <workItem from="1698958181860" duration="12590000" />
       <workItem from="1699010611013" duration="8823000" />
-      <workItem from="1699048836966" duration="10451000" />
+      <workItem from="1699048836966" duration="11598000" />
     </task>
     <task id="LOCAL-00001" summary="running test">
       <option name="closed" value="true" />
@@ -267,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699051841282</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="finishing my part of the app">
+      <option name="closed" value="true" />
+      <created>1699059367281</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1699059367281</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +302,8 @@
     <MESSAGE value="creating more test" />
     <MESSAGE value="creating card payment" />
     <MESSAGE value="adding functions to app" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding functions to app" />
+    <MESSAGE value="finishing my part of the app" />
+    <option name="LAST_COMMIT_MESSAGE" value="finishing my part of the app" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/library4$UserDaoTest.ic" NAME="UserDaoTest Coverage Results" MODIFIED="1698676405237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

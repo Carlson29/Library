@@ -143,17 +143,18 @@ public class LibraryApp {
                             lateAmount.add(amount);
                             lateBooks.add("-"+ i +" "+dao2.getBookName(lateLoans.get(i).getBookId()) + " price: €"+ amount);
                         }
-                        if(lateBooks.size()>0){
-                       int choosen =choose(lateBooks);
-                        int loanId=lateLoans.get(choosen).getLoanId();
-                         double pay=lateAmount.get(choosen);
+                        if(lateBooks.size()>0) {
+                            int choosen = choose(lateBooks);
+                            int loanId = lateLoans.get(choosen).getLoanId();
+                            double pay = lateAmount.get(choosen);
                             System.out.println("Enter card number details");
-                            long cardNum=sc.nextLong();
-                            if(validateCard(cardNum)==true) {
+                            if (sc.hasNextLong()){
+                                long cardNum = sc.nextLong();
+                            if (validateCard(cardNum) == true) {
                                 System.out.println("Enter security code");
                                 if (sc.hasNextInt()) {
                                     int securityCode = sc.nextInt();
-                                    String securityCode2 = securityCode + "";
+                                    String securityCode2 = securityCode +"";
                                     if (securityCode2.length() != 3) {
                                         System.out.println("invalid security code");
                                     } else {
@@ -162,9 +163,12 @@ public class LibraryApp {
                                         System.out.println("Paid  ");
                                     }
                                 }
-                            }
-                            else{
+                            } else {
                                 System.out.println("invalid card number");
+                            }
+                        }
+                            else{
+                                System.out.println("Please enter number");
                             }
                             }
                         else{
@@ -305,7 +309,7 @@ public class LibraryApp {
        return state;
     }
 
-    public static boolean securityCode(int number){
+    /*public static boolean securityCode(int number){
         boolean state=false;
         String num=number +"";
        if(num.length()==2){
@@ -313,7 +317,7 @@ public class LibraryApp {
        }
 
         return state;
-    }
+    }*/
 
 
 }
