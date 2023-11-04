@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2023 at 09:45 PM
+-- Generation Time: Nov 04, 2023 at 09:17 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -108,20 +108,22 @@ INSERT INTO `loans` (`loanId`, `bookId`, `userId`, `dateOfLoan`, `dueDate`, `ret
 CREATE TABLE `users` (
   `userId` int(6) NOT NULL,
   `userName` varchar(24) NOT NULL,
-  `password` varchar(24) NOT NULL,
+  `password` varchar(128) NOT NULL,
   `email` varchar(128) NOT NULL,
-  `dateOfBirth` date NOT NULL,
-  `phoneNumber` varchar(24) NOT NULL
+  `phoneNumber` varchar(24) NOT NULL,
+  `userType` int(11) NOT NULL DEFAULT 1,
+  `disable` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`userId`, `userName`, `password`, `email`, `dateOfBirth`, `phoneNumber`) VALUES
-(1, 'Carlson', 'carl', 'carl@gmail.com', '2011-08-20', '0895666431'),
-(2, 'Samuel', 'sam', 'sam@gmail.com', '2009-08-20', '0895666581'),
-(3, 'Tom', 'tom', 'tom@gmail.com', '2000-08-20', '0892966581');
+INSERT INTO `users` (`userId`, `userName`, `password`, `email`, `phoneNumber`, `userType`, `disable`) VALUES
+(1, 'Carlson', 'carl', 'carl@gmail.com', '0895666431', 1, 1),
+(2, 'Samuel', 'sam', 'sam@gmail.com', '0895666581', 2, 1),
+(3, 'Tom', 'tom', 'tom@gmail.com', '0892966581', 1, 2),
+(46, 'Naomi', 'nao', 'naomi@gmail.com', '895576248', 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -186,7 +188,7 @@ ALTER TABLE `loans`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `userId` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- Constraints for dumped tables
