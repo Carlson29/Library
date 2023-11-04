@@ -17,7 +17,7 @@ class LoanFeeDaoTest {
 
 
 
-
+/*testing insertReturnDate*/
     @Test
     void insertReturnDate() {
         LoanFeeDao feeDao= new LoanFeeDao("library");
@@ -61,7 +61,7 @@ class LoanFeeDaoTest {
         LoanFeeDao feeDao= new LoanFeeDao("library");
         feeDao.insertReturnDate(1);
     }
-    /*deleting return date*/
+    /*deleting return date after inserting*/
     @Test
     void deleteReturnDate() {
         LoanFeeDao feeDao= new LoanFeeDao("library");
@@ -98,7 +98,7 @@ class LoanFeeDaoTest {
         }
     }
 
-    /**When deleting LoanFee when LoanFee is not available*/
+    /**When deleting LoanFee when, LoanFee is not available*/
     @Test
     void deleteLateFee_WhenNotPresent() {
         LoanFeeDao feeDao= new LoanFeeDao("library");

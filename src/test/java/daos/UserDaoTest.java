@@ -11,13 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 //@author carlson
 class UserDaoTest {
 
-   /* @Before
-    void setUp() {
-    }
-
-    @After
-    void tearDown() {
-    }*/
 
 
     /**When there is a user with the email already registered**/
@@ -29,7 +22,7 @@ class UserDaoTest {
         int expected=-1;
         assertEquals(actual,expected);
     }
-
+/**delete the user before registering if the user is present*/
     @BeforeEach
     void delete_NewUser()  {
         UserDao dao= new UserDao("library");
@@ -52,7 +45,7 @@ class UserDaoTest {
             assertEquals(u1,u2);
         }
     }
-
+/**delete the new user created above after registering **/
     @AfterEach
     void deleteUser() {
         UserDao dao= new UserDao("library");
@@ -78,14 +71,6 @@ class UserDaoTest {
         assertEquals(actual,expected);
     }
 
-    /**When disabled user tries logging in
-    @Test
-    void logIn_WhenDisabledUserTriesLoggingIn() {
-        UserDao dao= new UserDao("library");
-        User actual= dao.logIn( "tom@gmail.com","tom");
-        User expected= null;
-        assertEquals(actual,expected);
-    }*/
 
 
     /**When an admin tries to disable a normal user**/
@@ -102,6 +87,7 @@ class UserDaoTest {
         }
 
     }
+    /**unsuspend the User**/
     @AfterEach
     void unSuspendUserAfterSuspending() {
         UserDao dao= new UserDao("library");
@@ -126,7 +112,7 @@ class UserDaoTest {
         assertEquals(actual,expected);
 
     }
-/**Deleting a user**/
+/** test Deleting a user**/
    @Test
     void delete_User() {
         UserDao dao= new UserDao("library");
@@ -139,7 +125,7 @@ class UserDaoTest {
            assertEquals(exp,act);
        }
     }
-/**registering deleted user*/
+/**registering deleted user */
    @AfterEach
     void registerDeletedUser() {
         UserDao dao= new UserDao("library");
@@ -165,7 +151,7 @@ class UserDaoTest {
         UserDao dao= new UserDao("library");
         dao.disAbleMember(2,3);
     }
-/**getting user Id when given a user email**/
+/** test getting user Id when given a user email**/
     @Test
     void getUserId() {
         UserDao dao= new UserDao("library");

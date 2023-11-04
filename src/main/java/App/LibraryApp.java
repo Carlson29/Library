@@ -77,7 +77,7 @@ public class LibraryApp {
                     System.out.println("logged in*******");
                 loggedIn = true;
 
-                //if it's an admin
+                //if it's an admin add the options
                 if (u1.getUserType() == 2) {
                     choices2.add("8- add a book to library");
                     choices2.add("9- Increase a copy of a book");
@@ -114,10 +114,10 @@ public class LibraryApp {
                         for(int i=0; i<lateLoans.size(); i++){
                             LocalDate start = LocalDate.parse(lateLoans.get(i).getDueDate().toString());
                             LocalDateTime end = LocalDateTime.now();
-
+                            //get number of days
                             long diffInDays = ChronoUnit.DAYS.between(start, end);
                             String diffInDays2= diffInDays+"";
-                            //calculating amount €0.5 a day
+                            //calculating late fee €0.5 a day
                             double amount = Integer.parseInt(diffInDays2)*0.5;
                             lateAmount.add(amount);
                             lateBooks.add("-"+ i +" "+dao2.getBookName(lateLoans.get(i).getBookId()) + " price: €"+ amount);
@@ -128,17 +128,16 @@ public class LibraryApp {
                     }
                     //pay late fee and return book
                     else if (choice2 == 6) {
-                        //creditCardValidator = new CreditCardValidator();
                         ArrayList <Loan> lateLoans = dao2.getOverDueLoans(u1.getUserId());
                         ArrayList <String> lateBooks = new ArrayList();
                         ArrayList <Double> lateAmount = new ArrayList();
                         for(int i=0; i<lateLoans.size(); i++){
                             LocalDate start = LocalDate.parse(lateLoans.get(i).getDueDate().toString());
                             LocalDateTime end = LocalDateTime.now();
-
+                           //get days difference
                             long diffInDays = ChronoUnit.DAYS.between(start, end);
                             String diffInDays2= diffInDays+"";
-                            //calculating amount €0.5 a day
+                            //calculating late fee €0.5 a day
                             double amount = Integer.parseInt(diffInDays2)*0.5;
                             lateAmount.add(amount);
                             lateBooks.add("-"+ i +" "+dao2.getBookName(lateLoans.get(i).getBookId()) + " price: €"+ amount);
@@ -191,16 +190,23 @@ public class LibraryApp {
                     //disable a member
                     else if (choice2 == 10) {
                      ArrayList <User> users=dao.getAllUsers();
+                     //get users
                         ArrayList <User> normalUsers=new ArrayList();
                      for(User u:users){
+                         //if it's a normal user or if the user isn't already disabled
                          if(u.getUserType()==1 && u.getDisable()==1){
                             normalUsers.add(u);
                          }
                      }
+                     if(users.size()>0){
                    int selectedUser =chooseUser(normalUsers);
                    int userId  = normalUsers.get(selectedUser).getUserId();
                    dao.disAbleMember(2,userId);
                    System.out.println("The user disabled");
+                         }
+                     else {
+                         System.out.println("No users available");
+                     }
                     }
 
                 }
@@ -221,6 +227,10 @@ public class LibraryApp {
 
 
     }
+    /**method to loop through ArrayList of strings and validate user choice
+     * @param choices, Arraylist of Strings
+     * @return a valid int (user choice)
+     * **/
     public static int choose(ArrayList<String> choices) {
         Scanner sc = new Scanner(System.in);
         boolean state = false;
@@ -249,7 +259,9 @@ public class LibraryApp {
     }
         return num;
     }
-
+    /**method to loop through ArrayList of Users and validate user choice
+     * @param choices, Arraylist of Users
+     * @return a valid int (user choice)   */
 
     public static int chooseUser(ArrayList<User> choices){
         Scanner sc= new Scanner(System.in);
@@ -280,7 +292,12 @@ public class LibraryApp {
         }
         return num;
     }
-/**method to validate a credit card number*/
+/**method to validate a credit card number
+ * @param number, credit card number
+ * @return true if valid or false if invalid
+ * reference https://www.geeksforgeeks.org/program-credit-card-number-validation/
+ *
+ * */
     public static boolean validateCard(long number){
        boolean state=false;
        String num=number +"";
@@ -309,15 +326,6 @@ public class LibraryApp {
        return state;
     }
 
-    /*public static boolean securityCode(int number){
-        boolean state=false;
-        String num=number +"";
-       if(num.length()==2){
-           return true;
-       }
-
-        return state;
-    }*/
 
 
 }

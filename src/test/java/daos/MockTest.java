@@ -41,6 +41,7 @@ public class MockTest {
         ps.setString(2,u.getPassword());*/
       /* verify(ps).executeQuery();*/
         UserDao dao= new UserDao(dbConn);
+        //it says ps is null I don't know why
         User u2=dao.logIn("carl@gmail.com",u.getPassword());
         verify(ps).setString(1,u.getEmail());
         verify(ps).setString(2,u.getPassword());
