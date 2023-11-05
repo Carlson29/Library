@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daos/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/UserDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +75,7 @@
       <recent name="daos" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LibraryApp">
+  <component name="RunManager" selected="JUnit.UserDaoTest.getUsers">
     <configuration name="LibraryApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App.LibraryApp" />
       <module name="ProductDaoWithMocking" />
@@ -135,7 +136,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDaoTest.logIn_WhenDisabledUserTriesLoggingIn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserDaoTest.getUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProductDaoWithMocking" />
       <extension name="coverage">
         <pattern>
@@ -145,7 +146,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="daos" />
       <option name="MAIN_CLASS_NAME" value="daos.UserDaoTest" />
-      <option name="METHOD_NAME" value="logIn_WhenDisabledUserTriesLoggingIn" />
+      <option name="METHOD_NAME" value="getUsers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -153,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserDaoTest.getUsers" />
         <item itemvalue="Application.LibraryApp" />
         <item itemvalue="JUnit.LoanFeeDaoTest.getLoan_WhenNoLoanIsPresent" />
         <item itemvalue="JUnit.MockTest.testLogin" />
         <item itemvalue="JUnit.UserDaoTest" />
-        <item itemvalue="JUnit.UserDaoTest.logIn_WhenDisabledUserTriesLoggingIn" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +185,8 @@
       <workItem from="1698958181860" duration="12590000" />
       <workItem from="1699010611013" duration="8823000" />
       <workItem from="1699048836966" duration="11598000" />
-      <workItem from="1699118341268" duration="5802000" />
+      <workItem from="1699118341268" duration="6077000" />
+      <workItem from="1699202147765" duration="334000" />
     </task>
     <task id="LOCAL-00001" summary="running test">
       <option name="closed" value="true" />
@@ -306,7 +308,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699128648396</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="adding more comments">
+      <option name="closed" value="true" />
+      <created>1699128997395</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1699128997395</updated>
+    </task>
+    <task id="LOCAL-00017" summary="adding more comments">
+      <option name="closed" value="true" />
+      <created>1699129154423</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1699129154423</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

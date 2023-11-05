@@ -191,9 +191,12 @@ class UserDaoTest {
         UserDao dao= new UserDao("library");
         ArrayList<User> actual= dao.getAllUsers();
         ArrayList<User> expected= new ArrayList();
-          expected.add(dao.getUser(1));
-          expected.add(dao.getUser(2));
-          expected.add(dao.getUser(3));
+        User u1= new User(1,"Carlson","carl","carl@gmail.com","0895666431",1,1);
+        User u2= new User(2,"Samuel","sam","sam@gmail.com","0895666581",2,1);
+        User u3= new User(3,"Tom","tom","tom@gmail.com","0892966581",1,2);
+        expected.add(u1);
+        expected.add(u2);
+        expected.add(u3);
         expected.add(dao.getUser(dao.getUserId("naomi@gmail.com")));
         assertEquals(actual,expected);
     }
