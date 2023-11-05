@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daos/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/UserDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +76,7 @@
       <recent name="daos" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserDaoTest.getUsers">
+  <component name="RunManager" selected="Application.LibraryApp">
     <configuration name="LibraryApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App.LibraryApp" />
       <module name="ProductDaoWithMocking" />
@@ -154,8 +155,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserDaoTest.getUsers" />
         <item itemvalue="Application.LibraryApp" />
+        <item itemvalue="JUnit.UserDaoTest.getUsers" />
         <item itemvalue="JUnit.LoanFeeDaoTest.getLoan_WhenNoLoanIsPresent" />
         <item itemvalue="JUnit.MockTest.testLogin" />
         <item itemvalue="JUnit.UserDaoTest" />
@@ -186,7 +187,8 @@
       <workItem from="1699010611013" duration="8823000" />
       <workItem from="1699048836966" duration="11598000" />
       <workItem from="1699118341268" duration="6077000" />
-      <workItem from="1699202147765" duration="334000" />
+      <workItem from="1699202147765" duration="912000" />
+      <workItem from="1699204177983" duration="3834000" />
     </task>
     <task id="LOCAL-00001" summary="running test">
       <option name="closed" value="true" />
@@ -324,7 +326,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699129154423</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fixing test">
+      <option name="closed" value="true" />
+      <created>1699202792583</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1699202792583</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +365,8 @@
     <MESSAGE value="finishing my part of the app" />
     <MESSAGE value="adding comments" />
     <MESSAGE value="adding more comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding more comments" />
+    <MESSAGE value="fixing test" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing test" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/library4$UserDaoTest.ic" NAME="UserDaoTest Coverage Results" MODIFIED="1698676405237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

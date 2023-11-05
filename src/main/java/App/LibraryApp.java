@@ -117,16 +117,18 @@ public class LibraryApp {
                         ArrayList <String> lateBooks = new ArrayList();
                         ArrayList <Double> lateAmount = new ArrayList();
                         //loop through overdue loans
-                        for(int i=0; i<lateLoans.size(); i++){
-                            LocalDate start = LocalDate.parse(lateLoans.get(i).getDueDate().toString());
+                        for(int i=0; i<lateLoans.size(); i++) {
+                            if (lateLoans.get(i).getReturnDate() == null){
+                                LocalDate start = LocalDate.parse(lateLoans.get(i).getDueDate().toString());
                             LocalDateTime end = LocalDateTime.now();
                             //get number of days
                             long diffInDays = ChronoUnit.DAYS.between(start, end);
-                            String diffInDays2= diffInDays+"";
+                            String diffInDays2 = diffInDays + "";
                             //calculating late fee €0.5 a day
-                            double amount = Integer.parseInt(diffInDays2)*0.5;
+                            double amount = Integer.parseInt(diffInDays2) * 0.5;
                             lateAmount.add(amount);
-                            lateBooks.add("-"+ i +" "+dao2.getBookName(lateLoans.get(i).getBookId()) + " price: €"+ amount);
+                            lateBooks.add("-" + i + " " + dao2.getBookName(lateLoans.get(i).getBookId()) + " price: €" + amount);
+                            }
                         }
                         for(String late: lateBooks){
                             System.out.println(late);
@@ -138,22 +140,24 @@ public class LibraryApp {
                         ArrayList <String> lateBooks = new ArrayList();
                         ArrayList <Double> lateAmount = new ArrayList();
                         for(int i=0; i<lateLoans.size(); i++){
-                            LocalDate start = LocalDate.parse(lateLoans.get(i).getDueDate().toString());
-                            LocalDateTime end = LocalDateTime.now();
-                           //get days difference
-                            long diffInDays = ChronoUnit.DAYS.between(start, end);
-                            String diffInDays2= diffInDays+"";
-                            //calculating late fee €0.5 a day
-                            double amount = Integer.parseInt(diffInDays2)*0.5;
-                            lateAmount.add(amount);
-                            lateBooks.add("-"+ i +" "+dao2.getBookName(lateLoans.get(i).getBookId()) + " price: €"+ amount);
+                            if(lateLoans.get(i).getReturnDate()==null) {
+                                LocalDate start = LocalDate.parse(lateLoans.get(i).getDueDate().toString());
+                                LocalDateTime end = LocalDateTime.now();
+                                //get days difference
+                                long diffInDays = ChronoUnit.DAYS.between(start, end);
+                                String diffInDays2 = diffInDays + "";
+                                //calculating late fee €0.5 a day
+                                double amount = Integer.parseInt(diffInDays2) * 0.5;
+                                lateAmount.add(amount);
+                                lateBooks.add("-" + i + " " + dao2.getBookName(lateLoans.get(i).getBookId()) + " price: €" + amount);
+                            }
                         }
                         if(lateBooks.size()>0) {
                             //choose book to pay
                             int choosen = choose(lateBooks);
                             int loanId = lateLoans.get(choosen).getLoanId();
                             double pay = lateAmount.get(choosen);
-                            System.out.println("Enter card number details");
+                            System.out.println("Enter card number details example:379354508162306");
                             if (sc.hasNextLong()){
                                 long cardNum = sc.nextLong();
                                 //validate card number
@@ -165,9 +169,35 @@ public class LibraryApp {
                                     if (securityCode2.length() != 3) {
                                         System.out.println("invalid security code");
                                     } else {
-                                        dao2.insertReturnDate(loanId);
-                                        dao2.payLateFee(loanId, pay);
-                                        System.out.println("Paid  ");
+                                        System.out.println("enter expiry month in number format (1-12)");
+                                        if (sc.hasNextInt()) {
+                                          int month = sc.nextInt();
+                                            if(month>0 && month<12) {
+                                                LocalDateTime now = LocalDateTime.now();
+                                                System.out.println("enter year");
+                                                if (sc.hasNextInt()) {
+                                                    int year = sc.nextInt();
+                                                    if (month<now.getMonthValue() && year>=now.getYear()){
+                                                       dao2.insertReturnDate(loanId);
+                                                    dao2.payLateFee(loanId, pay);
+                                                    System.out.println("Paid  ");
+                                                }
+                                                    else{
+                                                        System.out.println("sorry Expired card");
+                                                    }
+                                                }
+                                                else{
+                                                    System.out.println("Enter year in figures");
+                                                }
+                                            }
+                                            else{
+                                                System.out.println("invalid month");
+                                            }
+                                        }
+                                        else{
+                                            System.out.println("enter number");
+                                        }
+
                                     }
                                 }
                             } else {
@@ -248,7 +278,7 @@ public class LibraryApp {
 
         if (sc.hasNextInt()) {
             num = sc.nextInt();
-            sc.nextLine();
+           /// sc.nextLine();
             if (num < 0 || num >= choices.size()) {
                 System.out.println("please enter valid number");
                 //choose(choices);
