@@ -9,7 +9,7 @@ public interface BookDaoInterface {
 
     public int addBook(int bookId, int genreId, String title,String author,int numberOfCopies);
 
-    public int borrowBook(int bookId, String Book);
+    public int borrowBook(int bookId, int UserId);
 
     public  int returnBook(int bookId);
 }

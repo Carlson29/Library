@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="Adding BookDaoTest WIP!!!">
+    <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="BookDao &amp; BookDaoInterface WIP!!!&#10;Adding BookDaoTest WIP!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daos/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/BookDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daos/BookDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/BookDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daos/BookDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/BookDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +35,20 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Paradox131"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="673b23cb-c667-4a21-a8d3-f85bdd789db6" />
+        <option name="url" value="https://github.com/Carlson29/Library.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -194,7 +207,7 @@
       <workItem from="1699118341268" duration="6077000" />
       <workItem from="1699202147765" duration="912000" />
       <workItem from="1699204177983" duration="3834000" />
-      <workItem from="1699270329925" duration="1980000" />
+      <workItem from="1699270329925" duration="3994000" />
     </task>
     <task id="LOCAL-00001" summary="running test">
       <option name="closed" value="true" />
@@ -364,7 +377,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699271505982</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Adding BookDaoTest WIP!!!">
+      <option name="closed" value="true" />
+      <created>1699272931098</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1699272931099</updated>
+    </task>
+    <task id="LOCAL-00023" summary="BookDao &amp; BookDaoInterface WIP!!!&#10;Adding BookDaoTest WIP!!!">
+      <option name="closed" value="true" />
+      <created>1699273024525</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1699273024526</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +428,8 @@
     <MESSAGE value="Adding book class" />
     <MESSAGE value="Adding BookDao &amp; BookDaoInterface" />
     <MESSAGE value="Adding BookDaoTest WIP!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding BookDaoTest WIP!!!" />
+    <MESSAGE value="BookDao &amp; BookDaoInterface WIP!!!&#10;Adding BookDaoTest WIP!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="BookDao &amp; BookDaoInterface WIP!!!&#10;Adding BookDaoTest WIP!!!" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/library4$UserDaoTest.ic" NAME="UserDaoTest Coverage Results" MODIFIED="1698676405237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

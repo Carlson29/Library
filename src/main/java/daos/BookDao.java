@@ -128,7 +128,7 @@ public class BookDao extends Dao implements BookDaoInterface{
                 newId = generatedKeys.getInt(1);
             }
         } catch (SQLException e) {
-            System.err.println("\tA problem occurred during the borrowBook method:");
+            System.err.println("\tA problem occurred during the addBook method:");
             System.err.println("\t" + e.getMessage());
             newId = -1;
         } finally {
@@ -143,18 +143,26 @@ public class BookDao extends Dao implements BookDaoInterface{
                     freeConnection(con);
                 }
             } catch (SQLException e) {
-                System.err.println("A problem occurred when closing down the borrowBook method:\n" + e.getMessage());
+                System.err.println("A problem occurred when closing down the addBook method:\n" + e.getMessage());
             }
         }
         return newId;
     }
 
-    public int borrowBook(int bookId, String title)
+    public int borrowBook(int bookId, int userId)
     {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         int rowsAffected= 0;
+
+        try {
+            con = getConnection();
+
+            String query = "select * from book,user where bookId=? && title=?";
+            ps = con.prepareStatement(query);
+            rs = ps.executeQuery();
+
 
 
 
