@@ -3,25 +3,30 @@ package daos;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
 //@author carlson
 public class Dao {
 
     private String databaseName;
     // Included to allow for dependency injection - connection can be injected in and reused
     private Connection con;
-    public Dao(String databaseName){
+
+    public Dao(String databaseName) {
         this.databaseName = databaseName;
     }
-    public Dao(Connection con){ this.con = con; }
 
-    public Connection getConnection(){
+    public Dao(Connection con) {
+        this.con = con;
+    }
+
+    public Connection getConnection() {
         // If there is a connection already present in the object, use that
-        if(con != null){
+        if (con != null) {
             return con;
         }
         // Otherwise, create one and return it
         String driver = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/"+databaseName;
+        String url = "jdbc:mysql://localhost:3306/" + databaseName;
         String username = "root";
         String password = "";
         Connection con = null;
@@ -37,7 +42,7 @@ public class Dao {
         return con;
     }
 
-    public void freeConnection(Connection con){
+    public void freeConnection(Connection con) {
         try {
             if (con != null) {
                 con.close();

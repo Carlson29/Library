@@ -4,8 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="">
+    <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="fixing test">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8707e8c8-8d61-4983-8dd5-4979e85f650f/storage_v2/_src_/schema/library.uyToCQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8707e8c8-8d61-4983-8dd5-4979e85f650f/storage_v2/_src_/schema/library.uyToCQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/LoanFee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/LoanFee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daos/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/BookDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daos/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/Dao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDaoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daos/UserDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/UserDaoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daos/BookDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/BookDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daos/LoanFeeDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/LoanFeeDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daos/MockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/MockTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daos/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/UserDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,10 +93,10 @@
       <recent name="daos" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LibraryApp">
+  <component name="RunManager" selected="JUnit.UserDaoTest">
     <configuration name="LibraryApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App.LibraryApp" />
-      <module name="ProductDaoWithMocking" />
+      <module name="library" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="App.*" />
@@ -88,8 +107,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoanFeeDaoTest.getLoan_WhenNoLoanIsPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProductDaoWithMocking" />
+    <configuration name="LoanFeeDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="library" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="daos.*" />
@@ -98,14 +117,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="daos" />
       <option name="MAIN_CLASS_NAME" value="daos.LoanFeeDaoTest" />
-      <option name="METHOD_NAME" value="getLoan_WhenNoLoanIsPresent" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MockTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProductDaoWithMocking" />
+    <configuration name="LoanFeeDaoTest.getBookName_whenBookIsNotPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="library" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="daos.*" />
@@ -113,15 +131,31 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="daos" />
-      <option name="MAIN_CLASS_NAME" value="daos.MockTest" />
-      <option name="METHOD_NAME" value="testLogin" />
+      <option name="MAIN_CLASS_NAME" value="daos.LoanFeeDaoTest" />
+      <option name="METHOD_NAME" value="getBookName_whenBookIsNotPresent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoanFeeDaoTest.getOverDueLoans_WhenNoLoanIsPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="daos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="daos" />
+      <option name="MAIN_CLASS_NAME" value="daos.LoanFeeDaoTest" />
+      <option name="METHOD_NAME" value="getOverDueLoans_WhenNoLoanIsPresent" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="UserDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProductDaoWithMocking" />
+      <module name="library" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="daos.*" />
@@ -135,29 +169,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDaoTest.getUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProductDaoWithMocking" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="daos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="daos" />
-      <option name="MAIN_CLASS_NAME" value="daos.UserDaoTest" />
-      <option name="METHOD_NAME" value="getUsers" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LibraryApp" />
-        <item itemvalue="JUnit.UserDaoTest.getUsers" />
-        <item itemvalue="JUnit.LoanFeeDaoTest.getLoan_WhenNoLoanIsPresent" />
-        <item itemvalue="JUnit.MockTest.testLogin" />
         <item itemvalue="JUnit.UserDaoTest" />
+        <item itemvalue="JUnit.LoanFeeDaoTest" />
+        <item itemvalue="Application.LibraryApp" />
+        <item itemvalue="JUnit.LoanFeeDaoTest.getOverDueLoans_WhenNoLoanIsPresent" />
+        <item itemvalue="JUnit.LoanFeeDaoTest.getBookName_whenBookIsNotPresent" />
       </list>
     </recent_temporary>
   </component>
@@ -187,6 +205,7 @@
       <workItem from="1699118341268" duration="6077000" />
       <workItem from="1699202147765" duration="912000" />
       <workItem from="1699204177983" duration="3834000" />
+      <workItem from="1699295068717" duration="12036000" />
     </task>
     <task id="LOCAL-00001" summary="running test">
       <option name="closed" value="true" />
@@ -332,7 +351,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699202792583</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fixing test">
+      <option name="closed" value="true" />
+      <created>1699290521519</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1699290521519</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

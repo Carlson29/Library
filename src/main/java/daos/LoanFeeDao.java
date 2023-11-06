@@ -10,7 +10,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class LoanFeeDao extends Dao implements LoanFeeDaoInterface{
+/**
+ * @author carlson
+ **/
+public class LoanFeeDao extends Dao implements LoanFeeDaoInterface {
 
 
     public LoanFeeDao(String databaseName) {
@@ -35,35 +38,35 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface{
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDateTime now = LocalDateTime.now();
         try {
-                con = getConnection();
+            con = getConnection();
 
-                String command = "update loans set returnDate=? where loanId=?";
-                ps = con.prepareStatement(command);
-                ps.setString(1, (formatter.format(now)));
-                ps.setInt(2, loanId);
-                rowsAffected = ps.executeUpdate();
+            String command = "update loans set returnDate=? where loanId=?";
+            ps = con.prepareStatement(command);
+            ps.setString(1, (formatter.format(now)));
+            ps.setInt(2, loanId);
+            rowsAffected = ps.executeUpdate();
 
 
-            } catch (SQLException e) {
-                System.out.println("Exception occured in  the payLateFee() method: " + e.getMessage());
-            } finally {
-                try {
-                    if (rs != null) {
-                        rs.close();
-                    }
-                    if (ps != null) {
-                        ps.close();
-                    }
-                    if (con != null) {
-                        freeConnection(con);
-                    }
-                } catch (SQLException e) {
-                    System.out.println("Exception occured in  the payLateFee() method:  " + e.getMessage());
+        } catch (SQLException e) {
+            System.out.println("Exception occured in  the payLateFee() method: " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
                 }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    freeConnection(con);
+                }
+            } catch (SQLException e) {
+                System.out.println("Exception occured in  the payLateFee() method:  " + e.getMessage());
             }
+        }
 
 
-       return rowsAffected;
+        return rowsAffected;
     }
 
     /**
@@ -109,10 +112,13 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface{
 
         return rowsAffected;
     }
-/**deletes return Date of a loan
- * @param loanId
- * @return 0 if no loan was updated or 1 if a loan was updated
- * **/
+
+    /**
+     * deletes return Date of a loan
+     *
+     * @param loanId
+     * @return 0 if no loan was updated or 1 if a loan was updated
+     **/
     public int deleteReturnDate(int loanId) {
         Connection con = null;
         PreparedStatement ps = null;
@@ -125,7 +131,6 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface{
             ps = con.prepareStatement(command);
             ps.setInt(1, loanId);
             rowsAffected = ps.executeUpdate();
-
 
 
         } catch (SQLException e) {
@@ -149,10 +154,11 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface{
 
         return rowsAffected;
     }
-/* deletes late loan fee for a Loan
-*@param loanId
-*  @return 0 if no loan fee was deleted or 1 if a loan fee was deleted
-* **/
+
+    /* deletes late loan fee for a Loan
+     *@param loanId
+     *  @return 0 if no loan fee was deleted or 1 if a loan fee was deleted
+     * **/
     public int deleteLateFee(int loanId) {
         Connection con = null;
         PreparedStatement ps = null;
@@ -188,16 +194,19 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface{
 
         return rowsAffected;
     }
-/** gets a Loan
- * @param loanId
- * @return Loan or null if no Loan is found
- * **/
+
+    /**
+     * gets a Loan
+     *
+     * @param loanId
+     * @return Loan or null if no Loan is found
+     **/
     public Loan getLoan(int loanId) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         int rowsAffected = 0;
-        Loan l=null;
+        Loan l = null;
         try {
             con = getConnection();
 
@@ -206,9 +215,8 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface{
             ps.setInt(1, loanId);
             rs = ps.executeQuery();
 
-            if(rs.next())
-            {
-l = new Loan(rs.getInt("loanId"),rs.getInt("userId"),rs.getInt("bookId"),rs.getDate("dateOfLoan"),rs.getDate("dueDate"),rs.getDate("returnDate"));
+            if (rs.next()) {
+                l = new Loan(rs.getInt("loanId"), rs.getInt("userId"), rs.getInt("bookId"), rs.getDate("dateOfLoan"), rs.getDate("dueDate"), rs.getDate("returnDate"));
             }
 
         } catch (SQLException e) {
@@ -230,18 +238,21 @@ l = new Loan(rs.getInt("loanId"),rs.getInt("userId"),rs.getInt("bookId"),rs.getD
         }
 
 
-       return l;
+        return l;
     }
-/**gets a LoanFee
- * @param loanId
- * @return LoanFee or null if no LoanFee is found
- * **/
+
+    /**
+     * gets a LoanFee
+     *
+     * @param loanId
+     * @return LoanFee or null if no LoanFee is found
+     **/
     public LoanFee getLateLoanfee(int loanId) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         int rowsAffected = 0;
-        LoanFee l=null;
+        LoanFee l = null;
         try {
             con = getConnection();
 
@@ -250,9 +261,8 @@ l = new Loan(rs.getInt("loanId"),rs.getInt("userId"),rs.getInt("bookId"),rs.getD
             ps.setInt(1, loanId);
             rs = ps.executeQuery();
 
-            if(rs.next())
-            {
-                l = new LoanFee(rs.getInt("loanId"),rs.getDouble("loanFee"));
+            if (rs.next()) {
+                l = new LoanFee(rs.getInt("loanId"), rs.getDouble("loanFee"));
             }
 
         } catch (SQLException e) {
@@ -277,30 +287,33 @@ l = new Loan(rs.getInt("loanId"),rs.getInt("userId"),rs.getInt("bookId"),rs.getD
         return l;
 
     }
-/**gets a all overdue Loans of a particular user
- * @param userId
- * @return an ArrayList of Loans
- * **/
-    public ArrayList<Loan> getOverDueLoans(int userId){
+
+    /**
+     * gets a all overdue Loans of a particular user
+     *
+     * @param userId
+     * @return an ArrayList of Loans
+     **/
+    public ArrayList<Loan> getOverDueLoans(int userId) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        ArrayList<Loan> loans= new ArrayList();
-        try{
+        ArrayList<Loan> loans = new ArrayList();
+        try {
             con = getConnection();
 
-            String query = "Select * from loans where dueDate<now() and userId=?";
+            String query = "Select * from loans where dueDate<now() and userId = ? and returnDate is NULL";
             ps = con.prepareStatement(query);
             ps.setInt(1, userId);
+            // ps.setString(2, "IS NULL");
             rs = ps.executeQuery();
 
-            while(rs.next())
-            {
-                Loan l= new Loan(rs.getInt("loanId"), rs.getInt("userId"), rs.getInt("bookId"), rs.getDate("dateOfLoan"),  rs.getDate("dueDate"),  rs.getDate("returnDate"));
+            while (rs.next()) {
+                Loan l = new Loan(rs.getInt("loanId"), rs.getInt("userId"), rs.getInt("bookId"), rs.getDate("dateOfLoan"), rs.getDate("dueDate"), rs.getDate("returnDate"));
                 loans.add(l);
             }
 
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             System.out.println("Exception occured in the getOverDueLoans() method: " + e.getMessage());
         } finally {
             try {
@@ -319,16 +332,19 @@ l = new Loan(rs.getInt("loanId"),rs.getInt("userId"),rs.getInt("bookId"),rs.getD
         }
         return loans;
     }
-/**get a book's title when given a bookId
- * @param bookId
- * @return the book's title or null if no book was found
- * **/
-    public String getBookName(int bookId){
+
+    /**
+     * get a book's title when given a bookId
+     *
+     * @param bookId
+     * @return the book's title or null if no book was found
+     **/
+    public String getBookName(int bookId) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String title=null;
-        try{
+        String title = null;
+        try {
             con = getConnection();
 
             String query = "Select title from books where bookId=?  ";
@@ -336,12 +352,11 @@ l = new Loan(rs.getInt("loanId"),rs.getInt("userId"),rs.getInt("bookId"),rs.getD
             ps.setInt(1, bookId);
             rs = ps.executeQuery();
 
-            if(rs.next())
-            {
-                title=rs.getString("title");
+            if (rs.next()) {
+                title = rs.getString("title");
             }
 
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             System.out.println("Exception occured in the getOverDueLoans() method: " + e.getMessage());
         } finally {
             try {
