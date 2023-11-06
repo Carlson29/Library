@@ -1,6 +1,9 @@
 package daos;
 
 import business.User;
+
+import java.util.ArrayList;
+
 //@author carlson
 public interface UserDaoInterface {
     /**
@@ -27,4 +30,31 @@ public interface UserDaoInterface {
      * @return a boolean, true if the use was disabled and false for otherwise
      * **/
     public boolean disAbleMember(int userId, int disableId);
+    /**
+     * method to delete a user
+     * @param id, the userId
+     * @return 0 if user was not deleted, or 1 if user was deleted
+     * */
+    public int deleteUser(int id);
+    /**
+     * method unsuspends a user
+     * @param id, the userId
+     * @return 1 if user was deleted 0 if user wasn't deleted
+     * **/
+    public int unsuspendUser(int id);
+    /**gets a user id
+     * @param email, the user email
+     * @return -1 if no user was found with that email or returns an in
+     * **/
+    public int getUserId(String email);
+    /*get a User
+     *@param userId
+     * @return User
+     * */
+    public User getUser(int userId);
+    /**
+     * returns all Users
+     * @return an ArrayList of all users
+     * **/
+    public ArrayList<User> getAllUsers();
 }

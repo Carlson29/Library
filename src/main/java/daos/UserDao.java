@@ -132,7 +132,7 @@ public class UserDao extends Dao implements UserDaoInterface {
     /**Disables a particular user
      * @param userType, the userType of the person who is about to disable a user
      * @param disableId , the userId of user to be disabled
-     * @return a boolean, true if the use was disabled and false for otherwise
+     * @return a boolean, true if the user was disabled and false for otherwise or if the userType is not 2
      * **/
     @Override
     public boolean disAbleMember(int userType, int disableId) {
