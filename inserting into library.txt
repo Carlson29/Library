@@ -1,0 +1,29 @@
+// inserting into tables if needed
+//inserting into users
+
+insert into users(userName,password,email,dateOfBirth,phoneNumber) values ("Carlson","carl","carl@gmail.com","2011-08-20","0895666431");
+insert into users(userName,password,email,dateOfBirth,phoneNumber,userType) values ("Samuel","sam","sam@gmail.com","2009-08-20","0895666581",2);
+insert into users(userName,password,email,dateOfBirth,phoneNumber,disable) values ("Tom","tom","tom@gmail.com","2000-08-20","0892966581",2);
+
+
+//inserting into genres
+
+insert into genres(genreName) values ("horror");
+insert into genres(genreName) values ("fiction");
+insert into genres(genreName) values ("magic");
+
+
+
+//inserting into books
+
+insert into books(genreId,title,author,numberOfCopies) values (1,"Battle Zone","Jacob smith","40");
+insert into books(genreId,title,author,numberOfCopies) values (2,"Before dawn","Paul mcKevin","10");
+insert into books(genreId,title,author,numberOfCopies) values (3,"Harry potter","Voldermott","5");
+
+//inserting into loans 
+
+insert into loans(bookId,userId,dateOfLoan,dueDate) values (1,1,"2023-10-16","2023-10-20");
+
+insert into loans(bookId,userId,dateOfLoan,dueDate) values (2,2,"2023-10-15","2023-11-01");
+
+insert into loans(bookId,userId,dateOfLoan,dueDate) values (3,3,"2023-10-14","2023-10-17");
