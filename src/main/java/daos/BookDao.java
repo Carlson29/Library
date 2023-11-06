@@ -91,7 +91,7 @@ public class BookDao extends Dao implements BookDaoInterface{
         return rowsAffected;
     }
 
-    public int borrowBook(int bookId, int genreId, String title,String author,int numberOfCopies) {
+    public int addBook(int bookId, int genreId, String title,String author,int numberOfCopies) {
         Connection con = null;
         PreparedStatement ps = null;
         //This will be used to hold the generated ID (i.e. the value auto-generated
@@ -148,4 +148,27 @@ public class BookDao extends Dao implements BookDaoInterface{
         }
         return newId;
     }
+
+    public int borrowBook(int bookId, String title)
+    {
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int rowsAffected= 0;
+
+
+
+            return 0;
+        }
+
+
+        public int returnBook(int bookId)
+        {
+            Connection con = null;
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+            int rowsAffected= 0;
+
+            return 0;
+        }
 }

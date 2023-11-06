@@ -12,7 +12,7 @@ class BookDaoTest {
     }
 
     @test
-    Void BorrowBooks(){
+    Void addBooks(){
         BookDao dao= new BookDao("library");
         int actual = dao.borrowBook()
 
