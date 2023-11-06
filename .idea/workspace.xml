@@ -4,27 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="fixing test">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8707e8c8-8d61-4983-8dd5-4979e85f650f/storage_v2/_src_/schema/library.uyToCQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8707e8c8-8d61-4983-8dd5-4979e85f650f/storage_v2/_src_/schema/library.uyToCQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+    <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/LoanFee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/LoanFee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daos/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/BookDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daos/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/Dao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daos/UserDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/UserDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daos/BookDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/BookDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daos/LoanFeeDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/LoanFeeDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daos/MockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/MockTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daos/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/UserDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +186,7 @@
       <workItem from="1699118341268" duration="6077000" />
       <workItem from="1699202147765" duration="912000" />
       <workItem from="1699204177983" duration="3834000" />
-      <workItem from="1699295068717" duration="12036000" />
+      <workItem from="1699295068717" duration="12825000" />
     </task>
     <task id="LOCAL-00001" summary="running test">
       <option name="closed" value="true" />
@@ -359,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699290521519</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="putting code in methods in app">
+      <option name="closed" value="true" />
+      <created>1699308061607</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699308061607</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,7 +380,8 @@
     <MESSAGE value="adding comments" />
     <MESSAGE value="adding more comments" />
     <MESSAGE value="fixing test" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing test" />
+    <MESSAGE value="putting code in methods in app" />
+    <option name="LAST_COMMIT_MESSAGE" value="putting code in methods in app" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/library4$UserDaoTest.ic" NAME="UserDaoTest Coverage Results" MODIFIED="1698676405237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
