@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="" />
+    <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDao.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +34,7 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -54,14 +59,11 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/d00243400/OneDrive - Dundalk Institute of Technology/d00243400/Y3/web patterns/library&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/OneDrive - Dundalk Institute of Technology/d00243400/Y3/web patterns/library&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -74,7 +76,7 @@
       <recent name="daos" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MockTest.testLogin (1)">
+  <component name="RunManager" selected="Application.LibraryApp">
     <configuration name="LibraryApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App.LibraryApp" />
       <module name="ProductDaoWithMocking" />
@@ -104,8 +106,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MockTest.testLogin (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="library" />
+    <configuration name="MockTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProductDaoWithMocking" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="daos.*" />
@@ -120,7 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MockTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProductDaoWithMocking" />
       <extension name="coverage">
         <pattern>
@@ -129,9 +131,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="daos" />
-      <option name="MAIN_CLASS_NAME" value="daos.MockTest" />
-      <option name="METHOD_NAME" value="testLogin" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="daos.UserDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -154,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MockTest.testLogin (1)" />
         <item itemvalue="Application.LibraryApp" />
         <item itemvalue="JUnit.UserDaoTest.getUsers" />
         <item itemvalue="JUnit.LoanFeeDaoTest.getLoan_WhenNoLoanIsPresent" />
         <item itemvalue="JUnit.MockTest.testLogin" />
+        <item itemvalue="JUnit.UserDaoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -187,9 +188,7 @@
       <workItem from="1699048836966" duration="11598000" />
       <workItem from="1699118341268" duration="6077000" />
       <workItem from="1699202147765" duration="912000" />
-      <workItem from="1699204177983" duration="4133000" />
-      <workItem from="1699269239320" duration="6021000" />
-      <workItem from="1699289197950" duration="308000" />
+      <workItem from="1699204177983" duration="3834000" />
     </task>
     <task id="LOCAL-00001" summary="running test">
       <option name="closed" value="true" />
@@ -335,23 +334,7 @@
       <option name="project" value="LOCAL" />
       <updated>1699202792583</updated>
     </task>
-    <task id="LOCAL-00019" summary="adding expiry date to card">
-      <option name="closed" value="true" />
-      <created>1699208063485</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1699208063485</updated>
-    </task>
-    <task id="LOCAL-00020" summary="adding methods to interface">
-      <option name="closed" value="true" />
-      <created>1699289491790</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1699289491790</updated>
-    </task>
-    <option name="localTasksCounter" value="21" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,9 +366,7 @@
     <MESSAGE value="adding comments" />
     <MESSAGE value="adding more comments" />
     <MESSAGE value="fixing test" />
-    <MESSAGE value="adding expiry date to card" />
-    <MESSAGE value="adding methods to interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding methods to interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing test" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/library4$UserDaoTest.ic" NAME="UserDaoTest Coverage Results" MODIFIED="1698676405237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
