@@ -10,22 +10,25 @@ import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
-//@author carlson
+
+/**
+ * @author carlson
+ **/
 public class MockTest {
 
-    public MockTest(){
+    public MockTest() {
 
     }
+
     @Test
-    public void testLogin() throws SQLException
-    {
+    public void testLogin() throws SQLException {
         // Create mock objects
         Connection dbConn = mock(Connection.class);
         PreparedStatement ps = mock(PreparedStatement.class);
         ResultSet rs = mock(ResultSet.class);
-        User u= new User(1,"Carlson","carl","carl@gmail.com","0895666431",1,1);
+        User u = new User(1, "Carlson", "carl", "carl@gmail.com", "0895666431", 1, 1);
 
-        when(dbConn.prepareStatement("Select * from users where email =? and password=? ")).thenReturn(ps);
+        when(dbConn.prepareStatement("Select * from users where email = ? and password = ?")).thenReturn(ps);
 
         when(ps.executeQuery()).thenReturn(rs);
 
@@ -39,14 +42,14 @@ public class MockTest {
         when(rs.getInt("disable")).thenReturn(u.getDisable());
         /*ps.setString(1,u.getEmail());
         ps.setString(2,u.getPassword());*/
-      /* verify(ps).executeQuery();*/
-        UserDao dao= new UserDao(dbConn);
+        /* verify(ps).executeQuery();*/
+        UserDao dao = new UserDao(dbConn);
         //it says ps is null I don't know why
-        User u2=dao.logIn("carl@gmail.com",u.getPassword());
-        verify(ps).setString(1,u.getEmail());
-        verify(ps).setString(2,u.getPassword());
+        User u2 = dao.logIn("carl@gmail.com", u.getPassword());
+        verify(ps).setString(1, u.getEmail());
+        verify(ps).setString(2, u.getPassword());
 
-        assertEquals(u,u2);
+        assertEquals(u, u2);
     }
 
 

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="BookDao &amp; BookDaoInterface WIP!!!&#10;Adding BookDaoTest WIP!!!">
+    <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +16,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -34,20 +34,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Paradox131"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="673b23cb-c667-4a21-a8d3-f85bdd789db6" />
-        <option name="url" value="https://github.com/Carlson29/Library.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -60,27 +46,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "OverrideImplement.generate.javadoc": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/user/OneDrive - Dundalk Institute of Technology/d00243400/Y3/web patterns/library",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/OneDrive - Dundalk Institute of Technology/d00243400/Y3/web patterns/library&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -88,14 +73,11 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="daos" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="daos" />
-    </key>
   </component>
-  <component name="RunManager" selected="Application.LibraryApp">
+  <component name="RunManager" selected="JUnit.UserDaoTest">
     <configuration name="LibraryApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App.LibraryApp" />
-      <module name="ProductDaoWithMocking" />
+      <module name="library" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="App.*" />
@@ -106,8 +88,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoanFeeDaoTest.getLoan_WhenNoLoanIsPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProductDaoWithMocking" />
+    <configuration name="LoanFeeDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="library" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="daos.*" />
@@ -116,14 +98,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="daos" />
       <option name="MAIN_CLASS_NAME" value="daos.LoanFeeDaoTest" />
-      <option name="METHOD_NAME" value="getLoan_WhenNoLoanIsPresent" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MockTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProductDaoWithMocking" />
+    <configuration name="LoanFeeDaoTest.getBookName_whenBookIsNotPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="library" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="daos.*" />
@@ -131,15 +112,31 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="daos" />
-      <option name="MAIN_CLASS_NAME" value="daos.MockTest" />
-      <option name="METHOD_NAME" value="testLogin" />
+      <option name="MAIN_CLASS_NAME" value="daos.LoanFeeDaoTest" />
+      <option name="METHOD_NAME" value="getBookName_whenBookIsNotPresent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoanFeeDaoTest.getOverDueLoans_WhenNoLoanIsPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="daos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="daos" />
+      <option name="MAIN_CLASS_NAME" value="daos.LoanFeeDaoTest" />
+      <option name="METHOD_NAME" value="getOverDueLoans_WhenNoLoanIsPresent" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="UserDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProductDaoWithMocking" />
+      <module name="library" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="daos.*" />
@@ -153,29 +150,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDaoTest.getUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProductDaoWithMocking" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="daos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="daos" />
-      <option name="MAIN_CLASS_NAME" value="daos.UserDaoTest" />
-      <option name="METHOD_NAME" value="getUsers" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LibraryApp" />
-        <item itemvalue="JUnit.UserDaoTest.getUsers" />
-        <item itemvalue="JUnit.LoanFeeDaoTest.getLoan_WhenNoLoanIsPresent" />
-        <item itemvalue="JUnit.MockTest.testLogin" />
         <item itemvalue="JUnit.UserDaoTest" />
+        <item itemvalue="JUnit.LoanFeeDaoTest" />
+        <item itemvalue="Application.LibraryApp" />
+        <item itemvalue="JUnit.LoanFeeDaoTest.getOverDueLoans_WhenNoLoanIsPresent" />
+        <item itemvalue="JUnit.LoanFeeDaoTest.getBookName_whenBookIsNotPresent" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +186,7 @@
       <workItem from="1699118341268" duration="6077000" />
       <workItem from="1699202147765" duration="912000" />
       <workItem from="1699204177983" duration="3834000" />
-      <workItem from="1699270329925" duration="4792000" />
+      <workItem from="1699295068717" duration="12825000" />
     </task>
     <task id="LOCAL-00001" summary="running test">
       <option name="closed" value="true" />
@@ -351,55 +332,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699202792583</updated>
     </task>
-    <task id="LOCAL-00019" summary="Adding book class">
+    <task id="LOCAL-00019" summary="fixing test">
       <option name="closed" value="true" />
-      <created>1699270653279</created>
+      <created>1699290521519</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1699270653281</updated>
+      <updated>1699290521519</updated>
     </task>
-    <task id="LOCAL-00020" summary="Adding BookDao &amp; BookDaoInterface">
+    <task id="LOCAL-00020" summary="putting code in methods in app">
       <option name="closed" value="true" />
-      <created>1699271160705</created>
+      <created>1699308061607</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1699271160705</updated>
+      <updated>1699308061607</updated>
     </task>
-    <task id="LOCAL-00021" summary="Adding BookDaoTest WIP!!!">
-      <option name="closed" value="true" />
-      <created>1699271505981</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1699271505982</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Adding BookDaoTest WIP!!!">
-      <option name="closed" value="true" />
-      <created>1699272931098</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1699272931099</updated>
-    </task>
-    <task id="LOCAL-00023" summary="BookDao &amp; BookDaoInterface WIP!!!&#10;Adding BookDaoTest WIP!!!">
-      <option name="closed" value="true" />
-      <created>1699273024525</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1699273024526</updated>
-    </task>
-    <task id="LOCAL-00024" summary="BookDao &amp; BookDaoInterface WIP!!!&#10;Adding BookDaoTest WIP!!!">
-      <option name="closed" value="true" />
-      <created>1699275270695</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1699275270698</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,11 +380,8 @@
     <MESSAGE value="adding comments" />
     <MESSAGE value="adding more comments" />
     <MESSAGE value="fixing test" />
-    <MESSAGE value="Adding book class" />
-    <MESSAGE value="Adding BookDao &amp; BookDaoInterface" />
-    <MESSAGE value="Adding BookDaoTest WIP!!!" />
-    <MESSAGE value="BookDao &amp; BookDaoInterface WIP!!!&#10;Adding BookDaoTest WIP!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="BookDao &amp; BookDaoInterface WIP!!!&#10;Adding BookDaoTest WIP!!!" />
+    <MESSAGE value="putting code in methods in app" />
+    <option name="LAST_COMMIT_MESSAGE" value="putting code in methods in app" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/library4$UserDaoTest.ic" NAME="UserDaoTest Coverage Results" MODIFIED="1698676405237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

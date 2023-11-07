@@ -3,32 +3,36 @@ package business;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
-//@author carlson
-public class User implements Serializable {
- private int userId;
- private String userName;
- private String password;
- private String email;
- private String phoneNumber;
- private int userType;
- private int disable;
+
 /**
- * @param userId, int userId
- * @param userName, string userName
- * @param password, string password
- * @param email, string email
- * @param phoneNumber, string phoneNumber
- * @param userType, int userType
- * @param disable, int disable
- * **/
-    public User(int userId, String userName, String password, String email, String phoneNumber,int userType, int disable) {
+ * @author carlson
+ **/
+public class User implements Serializable {
+    private int userId;
+    private String userName;
+    private String password;
+    private String email;
+    private String phoneNumber;
+    private int userType;
+    private int disable;
+
+    /**
+     * @param userId,      int userId
+     * @param userName,    string userName
+     * @param password,    string password
+     * @param email,       string email
+     * @param phoneNumber, string phoneNumber
+     * @param userType,    int userType
+     * @param disable,     int disable
+     **/
+    public User(int userId, String userName, String password, String email, String phoneNumber, int userType, int disable) {
         this.userId = userId;
         this.userName = userName;
         this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.userType=userType;
-        this.disable=disable;
+        this.userType = userType;
+        this.disable = disable;
     }
 
     /*public User() {

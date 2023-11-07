@@ -4,9 +4,9 @@ import business.Book;
 
 import java.sql.*;
 
-public class BookDao extends Dao implements BookDaoInterface{
+public class BookDao {
 
-    public BookDao(String databaseName) {
+  /* public BookDao(String databaseName) {
         super(databaseName);
     }
 
@@ -178,5 +178,5 @@ public class BookDao extends Dao implements BookDaoInterface{
             int rowsAffected= 0;
 
             return 0;
-        }
+        }*/
 }

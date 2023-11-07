@@ -1,14 +1,18 @@
 package business;
 
 import java.util.Objects;
-//@author carlson
+
+/**
+ * @author carlson
+ **/
 public class LoanFee {
     private int loanId;
     private Double loanFee;
-/*
-* @param loanId, int loanId
-* @param loanFee, double loanFee
-* */
+
+    /*
+     * @param loanId, int loanId
+     * @param loanFee, double loanFee
+     * */
     public LoanFee(int loanId, Double loanFee) {
         this.loanId = loanId;
         this.loanFee = loanFee;
