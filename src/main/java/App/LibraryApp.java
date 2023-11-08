@@ -2,14 +2,13 @@ package App;
 
 import business.Loan;
 import business.User;
-import daos.Dao;
-import daos.LoanFeeDao;
-import daos.UserDao;
+import daos.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class LibraryApp {
@@ -56,11 +55,17 @@ public class LibraryApp {
                             }
                             //view details on active loans
                             else if (choice2 == 1) {
-
+                                System.out.println("Your current loan detail is:");
+                                LoanDaoInterface loanDao = new LoanDao("library");
+                                List<Loan> loans = loanDao.getLoansCurrent(u1.getUserId());
+                                showDetailsLoans(loans);
                             }
                             //view details on all loans
                             else if (choice2 == 2) {
-
+                                System.out.println("Your former loan detail is:");
+                                LoanDaoInterface loanDao = new LoanDao("library");
+                                List<Loan> loans = loanDao.getLoansFormer(u1.getUserId());
+                                showDetailsLoans(loans);
                             }
                             //borrow a book
                             else if (choice2 == 3) {
@@ -88,7 +93,9 @@ public class LibraryApp {
                             }
                             //view details on all active loans as an admin
                             else if (choice2 == 9) {
-
+                                LoanDaoInterface loanDao = new LoanDao("library");
+                                List<Loan> loans = loanDao.getLoanAsAdmin(u1.getUserType());
+                                showDetailsLoans(loans);
                             }
                             //disable a member
                             else if (choice2 == 10) {
@@ -466,4 +473,14 @@ public class LibraryApp {
         return false;
     }
 
+    public static void showDetailsLoans(List<Loan> loans){
+        for (Loan l : loans) {
+            System.out.println("Loan ID: " + l.getLoanId());
+            System.out.println("Book ID: " + l.getBookId());
+            System.out.println("User ID: " + l.getUserId());
+            System.out.println("Date of loan: " + l.getDateOfLoan());
+            System.out.println("Due date: " + l.getDueDate());
+            System.out.println("Return date: " + l.getReturnDate());
+        }
+    }
 }
