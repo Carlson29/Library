@@ -12,13 +12,8 @@ public class Loan {
     private Date dueDate;
     private Date returnDate;
 
-    public Loan(int loanId, int bookId, int userId, Date dateOfLoan,Date dueDate, Date returnDate) {
-        this.loanId = loanId;
-        this.bookId = bookId;
-        this.userId = userId;
-        this.dateOfLoan = dateOfLoan;
-        this.dueDate = dueDate;
-        this.returnDate = returnDate;
+    public Loan() {
+
     }
 
     public int getLoanId() {

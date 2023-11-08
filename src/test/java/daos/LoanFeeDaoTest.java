@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 
 import java.sql.Date;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,7 +30,7 @@ class LoanFeeDaoTest {
             Date dateOfLoan = new Date(2023 - 1900, 9, 16);
             Date dueDate = new Date(2023 - 1900, 9, 20);
             Date returnDate = new Date(now.getYear() - 1900, now.getMonthValue() - 1, now.getDayOfMonth());
-            Loan expected1 = new Loan(1, 1, 1, dateOfLoan, dueDate, returnDate);
+            Loan expected1 = new Loan();
             Loan actual1 = feeDao.getLoan(1);
             assertEquals(expected1, actual1);
         }
@@ -78,7 +77,7 @@ class LoanFeeDaoTest {
             Date dateOfLoan = new Date(2023 - 1900, 9, 16);
             Date dueDate = new Date(2023 - 1900, 9, 20);
             Date returnDate = null;
-            Loan expected1 = new Loan(1, 1, 1, dateOfLoan, dueDate, returnDate);
+            Loan expected1 = new Loan();
             Loan actual1 = feeDao.getLoan(1);
             assertEquals(expected1, actual1);
         }
@@ -127,7 +126,7 @@ class LoanFeeDaoTest {
         Date dateOfLoan = new Date(2023 - 1900, 9, 16);
         Date dueDate = new Date(2023 - 1900, 9, 20);
         Date returnDate = new Date(now.getYear() - 1900, now.getMonthValue() - 1, now.getDayOfMonth());
-        Loan expected = new Loan(1, 1, 1, dateOfLoan, dueDate, returnDate);
+        Loan expected = new Loan();
         Loan actual = feeDao.getLoan(1);
         assertEquals(expected, actual);
     }
@@ -149,7 +148,7 @@ class LoanFeeDaoTest {
         Date dateOfLoan = new Date(now.getYear() - 1900, 9, 14);
         Date dueDate = new Date(now.getYear() - 1900, 9, 17);
         Date returnDate = null;
-        Loan l1 = new Loan(3, 3, 3, dateOfLoan, dueDate, returnDate);
+        Loan l1 = new Loan();
         ArrayList<Loan> expected = new ArrayList();
         expected.add(l1);
         ArrayList<Loan> actual = feeDao.getOverDueLoans(3);

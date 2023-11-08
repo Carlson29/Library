@@ -2,10 +2,8 @@ package daos;
 
 import business.Loan;
 import business.LoanFee;
-import business.User;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -216,7 +214,7 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface {
             rs = ps.executeQuery();
 
             if (rs.next()) {
-                l = new Loan(rs.getInt("loanId"), rs.getInt("userId"), rs.getInt("bookId"), rs.getDate("dateOfLoan"), rs.getDate("dueDate"), rs.getDate("returnDate"));
+                l = new Loan();
             }
 
         } catch (SQLException e) {
@@ -309,7 +307,7 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                Loan l = new Loan(rs.getInt("loanId"), rs.getInt("userId"), rs.getInt("bookId"), rs.getDate("dateOfLoan"), rs.getDate("dueDate"), rs.getDate("returnDate"));
+                Loan l = new Loan();
                 loans.add(l);
             }
 
