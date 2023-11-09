@@ -66,19 +66,33 @@ class BookDaoTest {
         assertEquals(author, newBook.getAuthor());
         assertEquals(numberOfCopies, newBook.getNumberOfCopies());
     }
+    //Test to Borrow a Book
     @Test
     void testBorrowBook() {
         int bookIdToBorrow = 1;
         int userId = 1;
 
-        int rowsAffected = bookDao.BorrowBook(bookIdToBorrow, userId);
+        int rowsAffected = bookDao.borrowBook(bookIdToBorrow, userId);
 
         assertTrue(rowsAffected > 0);
 
-        int updatedCopies = bookDao.BorrowBook(1,1);
+        int updatedCopies = bookDao.borrowBook(1,1);
         assertTrue(updatedCopies >= 0);
     }
 
+    //Test to Return a Book
+    @Test
+    void testReturnBook() {
+        int bookIdToReturn = 1;
+        int userId = 1;
+
+        int rowsAffected = bookDao.returnBook(bookIdToReturn, userId);
+
+        assertTrue(rowsAffected > 0);
+
+        int updatedCopies = bookDao.returnBook(1,1);
+        assertTrue(updatedCopies >= 1);
+    }
 
 @org.junit.jupiter.api.AfterEach
     void tearDown() {

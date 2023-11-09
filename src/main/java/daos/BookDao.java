@@ -149,7 +149,7 @@ public class BookDao extends Dao implements BookDaoInterface {
         return newId;
     }
 
-    public int BorrowBook(int bookId, int userId) {
+    public int borrowBook(int bookId, int userId) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -158,7 +158,7 @@ public class BookDao extends Dao implements BookDaoInterface {
         try {
             con = getConnection();
 
-            // Check if the user is allowed to borrow a book
+            // To check if the user is allowed to borrow a book
             String able = "SELECT disable FROM users WHERE userId = ?";
             ps = con.prepareStatement(able);
             ps.setInt(1, userId);
@@ -176,7 +176,7 @@ public class BookDao extends Dao implements BookDaoInterface {
                     if (rs.next()) {
                         int numberOfCopies = rs.getInt("numberOfCopies");
                         if (numberOfCopies > 0) {
-                            // If the user is allowed to borrow the book, decrement the number of copies and update the database.
+                            // If the user is allowed to borrow the book, decrease the number of copies and update the database.
                             String borrow = "UPDATE books SET numberOfCopies = ? WHERE bookId = ?";
                             ps = con.prepareStatement(borrow);
                             ps.setInt(1, numberOfCopies - 1);
@@ -207,16 +207,50 @@ public class BookDao extends Dao implements BookDaoInterface {
 
         return rowsAffected;
     }
-    //
-    //
-    //   public int returnBook ( int bookId)
-    //   {
-    //       Connection con = null;
-    //       PreparedStatement ps = null;
-    //       ResultSet rs = null;
-    //       int rowsAffected = 0;
-    //
-    //       return 0;
-    //   }
+
+    public int returnBook(int bookId, int userId) {
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int rowsAffected = 0;
+
+        try {
+            con = getConnection();
+
+            // Check if the user has borrowed the book
+            String borrowed = "SELECT bookId FROM user_books WHERE userId = ? AND bookId = ?";
+            ps = con.prepareStatement(borrowed);
+            ps.setInt(1, userId);
+            ps.setInt(2, bookId);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                // if the user has borrowed the book, increase the number of copies and update the database
+                String returnBook = "UPDATE books SET numberOfCopies = numberOfCopies + 1 WHERE bookId = ?";
+                ps = con.prepareStatement(returnBook);
+                ps.setInt(1, bookId);
+                rowsAffected = ps.executeUpdate();
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Exception occurred in the ReturnBook method: " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    freeConnection(con);
+                }
+            } catch (SQLException e) {
+                System.out.println("Exception occurred in the ReturnBook method: " + e.getMessage());
+            }
+        }
+
+        return rowsAffected;
+    }
 }
 
