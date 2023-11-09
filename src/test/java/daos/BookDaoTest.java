@@ -75,7 +75,7 @@ class BookDaoTest {
         int rowsAffected = bookDao.borrowBook(bookIdToBorrow, userId);
 
         assertTrue(rowsAffected > 0);
-
+            //To make sure book is actually borrowed
         int updatedCopies = bookDao.borrowBook(1,1);
         assertTrue(updatedCopies >= 0);
     }
@@ -89,7 +89,7 @@ class BookDaoTest {
         int rowsAffected = bookDao.returnBook(bookIdToReturn, userId);
 
         assertTrue(rowsAffected > 0);
-
+            //To make book is returned
         int updatedCopies = bookDao.returnBook(1,1);
         assertTrue(updatedCopies >= 1);
     }
