@@ -149,7 +149,7 @@ public class BookDao extends Dao implements BookDaoInterface {
         return newId;
     }
 
-    /*public int borrowBook(int bookId, int userId) {
+    public int BorrowBook(int bookId, int userId) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -158,23 +158,65 @@ public class BookDao extends Dao implements BookDaoInterface {
         try {
             con = getConnection();
 
-            String query = "select * from book,user where bookId=? && title=?";
-            ps = con.prepareStatement(query);
+            // Check if the user is allowed to borrow a book
+            String able = "SELECT disable FROM users WHERE userId = ?";
+            ps = con.prepareStatement(able);
+            ps.setInt(1, userId);
             rs = ps.executeQuery();
 
+            if (rs.next()) {
+                int userDisable = rs.getInt("disable");
+                if (userDisable == 1) {
+                    // Check if the book is available (has more than 0 copies)
+                    String query = "SELECT numberOfCopies FROM books WHERE bookId = ?";
+                    ps = con.prepareStatement(query);
+                    ps.setInt(1, bookId);
+                    rs = ps.executeQuery();
 
-            return 0;}
+                    if (rs.next()) {
+                        int numberOfCopies = rs.getInt("numberOfCopies");
+                        if (numberOfCopies > 0) {
+                            // If the user is allowed to borrow the book, decrement the number of copies and update the database.
+                            String borrow = "UPDATE books SET numberOfCopies = ? WHERE bookId = ?";
+                            ps = con.prepareStatement(borrow);
+                            ps.setInt(1, numberOfCopies - 1);
+                            ps.setInt(2, bookId);
+                            rowsAffected = ps.executeUpdate();
+                        }
+                    }
+                }
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Exception occurred in the BorrowBook method: " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    freeConnection(con);
+                }
+            } catch (SQLException e) {
+                System.out.println("Exception occurred in the BorrowBook method: " + e.getMessage());
+            }
         }
 
-
-        public int returnBook ( int bookId)
-        {
-            Connection con = null;
-            PreparedStatement ps = null;
-            ResultSet rs = null;
-            int rowsAffected = 0;
-
-            return 0;
-        }
+        return rowsAffected;
     }
+    //
+    //
+    //   public int returnBook ( int bookId)
+    //   {
+    //       Connection con = null;
+    //       PreparedStatement ps = null;
+    //       ResultSet rs = null;
+    //       int rowsAffected = 0;
+    //
+    //       return 0;
+    //   }
+}
 
