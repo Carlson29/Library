@@ -56,14 +56,14 @@ public class LibraryApp {
                             //view details on active loans
                             else if (choice2 == 1) {
                                 System.out.println("Your current loan detail is:");
-                                LoanDaoInterface loanDao = new LoanDao("library");
+                                LoanDaoInterface loanDao = new LoanDao("mainlibrary");
                                 List<Loan> loans = loanDao.getLoansCurrent(u1.getUserId());
                                 showDetailsLoans(loans);
                             }
                             //view details on all loans
                             else if (choice2 == 2) {
                                 System.out.println("Your former loan detail is:");
-                                LoanDaoInterface loanDao = new LoanDao("library");
+                                LoanDaoInterface loanDao = new LoanDao("mainlibrary");
                                 List<Loan> loans = loanDao.getLoansFormer(u1.getUserId());
                                 showDetailsLoans(loans);
                             }
@@ -93,7 +93,7 @@ public class LibraryApp {
                             }
                             //view details on all active loans as an admin
                             else if (choice2 == 9) {
-                                LoanDaoInterface loanDao = new LoanDao("library");
+                                LoanDaoInterface loanDao = new LoanDao("mainlibrary");
                                 List<Loan> loans = loanDao.getLoanAsAdmin(u1.getUserType());
                                 showDetailsLoans(loans);
                             }
@@ -473,7 +473,7 @@ public class LibraryApp {
         return false;
     }
 
-    public static void showDetailsLoans(List<Loan> loans){
+    public static void showDetailsLoans(List<Loan> loans) {
         for (Loan l : loans) {
             System.out.println("Loan ID: " + l.getLoanId());
             System.out.println("Book ID: " + l.getBookId());
