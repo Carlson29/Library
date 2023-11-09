@@ -1,5 +1,7 @@
 package App;
 
+import java.util.Scanner;
+import business.Book;
 import business.Loan;
 import business.User;
 import daos.*;
@@ -51,7 +53,10 @@ public class LibraryApp {
                             int choice2 = choose(choices2);
                             //view details on all books
                             if (choice2 == 0) {
-
+                                BookDaoInterface bookDao = new BookDao("mainlibrary");
+                                System.out.println("The current books available:");
+                                Book displayedBook = bookDao.DisplayAllBook();
+                                System.out.println(displayedBook);
                             }
                             //view details on active loans
                             else if (choice2 == 1) {
@@ -69,11 +74,25 @@ public class LibraryApp {
                             }
                             //borrow a book
                             else if (choice2 == 3) {
-
+                                BookDaoInterface bookDao = new BookDao("mainlibrary");
+                                System.out.println("\nEnter Book ID to Borrow:");
+                                int bookIdToBorrow = sc.nextInt();
+                                System.out.println("Enter User ID:");
+                                int userIdBorrow = sc.nextInt();
+                                System.out.println("\nBorrowing Book (Book ID: " + bookIdToBorrow + ", User ID: " + userIdBorrow + "):");
+                                int borrowRowsAffected = bookDao.borrowBook(bookIdToBorrow, userIdBorrow);
+                                System.out.println("Rows Affected: " + borrowRowsAffected);
                             }
                             //return a book
                             else if (choice2 == 4) {
-
+                                BookDaoInterface bookDao = new BookDao("mainlibrary");
+                                System.out.print("\nEnter Book ID to Return: ");
+                                int bookIdToReturn = sc.nextInt();
+                                System.out.print("Enter User ID: ");
+                                int userIdForReturn = sc.nextInt();
+                                System.out.println("\nReturning Book (Book ID: " + bookIdToReturn + ", User ID: " + userIdForReturn + "):");
+                                int returnRowsAffected = bookDao.returnBook(bookIdToReturn, userIdForReturn);
+                                System.out.println("Rows Affected: " + returnRowsAffected);
                             }
                             //view current late fee
                             else if (choice2 == 5) {
@@ -89,7 +108,9 @@ public class LibraryApp {
                             }
                             //view details on all books as an admin
                             else if (choice2 == 8) {
-
+                                BookDaoInterface bookDao = new BookDao("mainlibrary");
+                                Book displayedBook = bookDao.DisplayAllBook();
+                                System.out.println(displayedBook);
                             }
                             //view details on all active loans as an admin
                             else if (choice2 == 9) {
