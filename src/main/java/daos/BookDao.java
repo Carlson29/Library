@@ -4,9 +4,10 @@ import business.Book;
 
 import java.sql.*;
 
-public class BookDao {
 
-  /* public BookDao(String databaseName) {
+public class BookDao extends Dao implements BookDaoInterface {
+
+    public BookDao(String databaseName) {
         super(databaseName);
     }
 
@@ -19,7 +20,7 @@ public class BookDao {
         PreparedStatement ps = null;
         ResultSet rs = null;
         int rowsAffected = 0;
-        Book b=null;
+        Book b = null;
 
         try {
             con = getConnection();
@@ -28,9 +29,8 @@ public class BookDao {
             ps = con.prepareStatement(query);
             rs = ps.executeQuery();
 
-            if(rs.next())
-            {
-                b = new Book(rs.getInt("bookId"),rs.getInt("genreId"),rs.getString("title"),rs.getString("author"),rs.getInt("numberOfCopies"));
+            if (rs.next()) {
+                b = new Book(rs.getInt("bookId"), rs.getInt("genreId"), rs.getString("title"), rs.getString("author"), rs.getInt("numberOfCopies"));
             }
 
         } catch (SQLException e) {
@@ -59,7 +59,7 @@ public class BookDao {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        int rowsAffected= 0;
+        int rowsAffected = 0;
 
         try {
             con = getConnection();
@@ -91,7 +91,7 @@ public class BookDao {
         return rowsAffected;
     }
 
-    public int addBook(int bookId, int genreId, String title,String author,int numberOfCopies) {
+    public int addBook(int bookId, int genreId, String title, String author, int numberOfCopies) {
         Connection con = null;
         PreparedStatement ps = null;
         //This will be used to hold the generated ID (i.e. the value auto-generated
@@ -149,12 +149,11 @@ public class BookDao {
         return newId;
     }
 
-    public int borrowBook(int bookId, int userId)
-    {
+    /*public int borrowBook(int bookId, int userId) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        int rowsAffected= 0;
+        int rowsAffected = 0;
 
         try {
             con = getConnection();
@@ -164,19 +163,18 @@ public class BookDao {
             rs = ps.executeQuery();
 
 
-
-
-            return 0;
+            return 0;}
         }
 
 
-        public int returnBook(int bookId)
+        public int returnBook ( int bookId)
         {
             Connection con = null;
             PreparedStatement ps = null;
             ResultSet rs = null;
-            int rowsAffected= 0;
+            int rowsAffected = 0;
 
             return 0;
-        }*/
-}
+        }
+    }
+
