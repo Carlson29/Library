@@ -4,9 +4,10 @@ import business.Book;
 
 import java.sql.*;
 
-public class BookDao {
 
-  /* public BookDao(String databaseName) {
+public class BookDao extends Dao implements BookDaoInterface {
+
+    public BookDao(String databaseName) {
         super(databaseName);
     }
 
@@ -19,7 +20,7 @@ public class BookDao {
         PreparedStatement ps = null;
         ResultSet rs = null;
         int rowsAffected = 0;
-        Book b=null;
+        Book b = null;
 
         try {
             con = getConnection();
@@ -28,9 +29,8 @@ public class BookDao {
             ps = con.prepareStatement(query);
             rs = ps.executeQuery();
 
-            if(rs.next())
-            {
-                b = new Book(rs.getInt("bookId"),rs.getInt("genreId"),rs.getString("title"),rs.getString("author"),rs.getInt("numberOfCopies"));
+            if (rs.next()) {
+                b = new Book(rs.getInt("bookId"), rs.getInt("genreId"), rs.getString("title"), rs.getString("author"), rs.getInt("numberOfCopies"));
             }
 
         } catch (SQLException e) {
@@ -59,7 +59,7 @@ public class BookDao {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        int rowsAffected= 0;
+        int rowsAffected = 0;
 
         try {
             con = getConnection();
@@ -91,7 +91,7 @@ public class BookDao {
         return rowsAffected;
     }
 
-    public int addBook(int bookId, int genreId, String title,String author,int numberOfCopies) {
+    public int addBook(int bookId, int genreId, String title, String author, int numberOfCopies) {
         Connection con = null;
         PreparedStatement ps = null;
         //This will be used to hold the generated ID (i.e. the value auto-generated
@@ -149,34 +149,108 @@ public class BookDao {
         return newId;
     }
 
-    public int borrowBook(int bookId, int userId)
-    {
+    public int borrowBook(int bookId, int userId) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        int rowsAffected= 0;
+        int rowsAffected = 0;
 
         try {
             con = getConnection();
 
-            String query = "select * from book,user where bookId=? && title=?";
-            ps = con.prepareStatement(query);
+            // To check if the user is allowed to borrow a book
+            String able = "SELECT disable FROM users WHERE userId = ?";
+            ps = con.prepareStatement(able);
+            ps.setInt(1, userId);
             rs = ps.executeQuery();
 
+            if (rs.next()) {
+                int userDisable = rs.getInt("disable");
+                if (userDisable == 1) {
+                    // Check if the book is available (has more than 0 copies)
+                    String query = "SELECT numberOfCopies FROM books WHERE bookId = ?";
+                    ps = con.prepareStatement(query);
+                    ps.setInt(1, bookId);
+                    rs = ps.executeQuery();
 
+                    if (rs.next()) {
+                        int numberOfCopies = rs.getInt("numberOfCopies");
+                        if (numberOfCopies > 0) {
+                            // If the user is allowed to borrow the book, decrease the number of copies and update the database.
+                            String borrow = "UPDATE books SET numberOfCopies = ? WHERE bookId = ?";
+                            ps = con.prepareStatement(borrow);
+                            ps.setInt(1, numberOfCopies - 1);
+                            ps.setInt(2, bookId);
+                            rowsAffected = ps.executeUpdate();
+                        }
+                    }
+                }
+            }
 
-
-            return 0;
+        } catch (SQLException e) {
+            System.out.println("Exception occurred in the BorrowBook method: " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    freeConnection(con);
+                }
+            } catch (SQLException e) {
+                System.out.println("Exception occurred in the BorrowBook method: " + e.getMessage());
+            }
         }
 
+        return rowsAffected;
+    }
 
-        public int returnBook(int bookId)
-        {
-            Connection con = null;
-            PreparedStatement ps = null;
-            ResultSet rs = null;
-            int rowsAffected= 0;
+    public int returnBook(int bookId, int userId) {
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int rowsAffected = 0;
 
-            return 0;
-        }*/
+        try {
+            con = getConnection();
+
+            // Check if the user has borrowed the book
+            String borrowed = "SELECT bookId FROM user_books WHERE userId = ? AND bookId = ?";
+            ps = con.prepareStatement(borrowed);
+            ps.setInt(1, userId);
+            ps.setInt(2, bookId);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                // if the user has borrowed the book, increase the number of copies and update the database
+                String returnBook = "UPDATE books SET numberOfCopies = numberOfCopies + 1 WHERE bookId = ?";
+                ps = con.prepareStatement(returnBook);
+                ps.setInt(1, bookId);
+                rowsAffected = ps.executeUpdate();
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Exception occurred in the ReturnBook method: " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    freeConnection(con);
+                }
+            } catch (SQLException e) {
+                System.out.println("Exception occurred in the ReturnBook method: " + e.getMessage());
+            }
+        }
+
+        return rowsAffected;
+    }
 }
+
