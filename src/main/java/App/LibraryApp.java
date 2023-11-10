@@ -55,8 +55,8 @@ public class LibraryApp {
                             if (choice2 == 0) {
                                 BookDaoInterface bookDao = new BookDao("mainlibrary");
                                 System.out.println("The current books available:");
-                                Book displayedBook = bookDao.DisplayAllBook();
-                                System.out.println(displayedBook);
+                                //List<Book> books = bookDao.DisplayAllBook();
+                               // showAllBooks(books);
                             }
                             //view details on active loans
                             else if (choice2 == 1) {
@@ -106,11 +106,11 @@ public class LibraryApp {
                             else if (choice2 == 7) {
                                 loggedIn = false;
                             }
-                            //view details on all books as an admin
+                            //Add a book
                             else if (choice2 == 8) {
                                 BookDaoInterface bookDao = new BookDao("mainlibrary");
-                                Book displayedBook = bookDao.DisplayAllBook();
-                                System.out.println(displayedBook);
+
+                               // System.out.println(displayedBook);
                             }
                             //view details on all active loans as an admin
                             else if (choice2 == 9) {
@@ -502,6 +502,16 @@ public class LibraryApp {
             System.out.println("Date of loan: " + l.getDateOfLoan());
             System.out.println("Due date: " + l.getDueDate());
             System.out.println("Return date: " + l.getReturnDate());
+        }
+    }
+
+    public static void showAllBooks(List<Book>book) {
+        for (Book b : book) {
+            System.out.println("Book ID:" + b.getBookId());
+            System.out.println("Genre ID:" + b.getGenreId());
+            System.out.println("Title:" + b.getTitle());
+            System.out.println("Author:" + b.getAuthor());
+            System.out.println("No. of Copies:" + b.getNumberOfCopies());
         }
     }
 }
