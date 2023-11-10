@@ -109,15 +109,50 @@ public class LibraryApp {
                             }
                             //add a book to the library
                             else if (choice2 == 8) {
-                                BookDaoInterface bookDao = new BookDao("mainlibrary");
-                             List <Book> displayedBook = bookDao.DisplayAllBook();
-                                System.out.println(displayedBook);
+                                BookDao bookDao = new BookDao("mainlibrary");
+
+                                System.out.print("Enter the book ID: ");
+                                int bookId = sc.nextInt();
+
+                                System.out.print("Enter the genre ID: ");
+                                int genreId = sc.nextInt();
+
+                                sc.nextLine();
+
+                                System.out.print("Enter the title: ");
+                                String title = sc.nextLine();
+
+                                System.out.print("Enter the author: ");
+                                String author = sc.nextLine();
+
+                                System.out.print("Enter the number of copies: ");
+                                int numberOfCopies = sc.nextInt();
+
+                                int newId = bookDao.addBook(bookId, genreId, title, author, numberOfCopies);
+
+                                if (newId != -1) {
+                                    System.out.println("Book added successfully with ID: " + newId);
+                                } else {
+                                    System.out.println("Failed to add the book.");
+                                }
                             }
                             //increase the number of copies for a book
                             else if (choice2 == 9) {
-                                /*LoanDaoInterface loanDao = new LoanDao("mainlibrary");
-                                List<Loan> loans = loanDao.getLoanAsAdmin(u1.getUserType());
-                                showDetailsLoans(loans);*/
+                                BookDao bookDao = new BookDao("mainlibrary");
+
+                                System.out.print("Enter the book ID to update: ");
+                                int bookIdToUpdate = sc.nextInt();
+
+                                System.out.print("Enter the new number of copies: ");
+                                int newNumberOfCopies = sc.nextInt();
+
+                                int rowsAffected = bookDao.UpdateNumberOfCopies(bookIdToUpdate, newNumberOfCopies);
+
+                                if (rowsAffected > 0) {
+                                    System.out.println("Number of copies updated successfully.");
+                                } else {
+                                    System.out.println("Failed to update the number of copies.");
+                                }
                             }
                             //disable a member
                             else if (choice2 == 10) {
