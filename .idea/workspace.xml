@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="All bookDao Methods &amp; tests done and genre class created">
+    <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="done the borrow and return but couldn't find the add/remove book in LibraryApp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/Book.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -391,7 +392,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699505262486</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="done the borrow and return but couldn't find the add/remove book in LibraryApp">
+      <option name="closed" value="true" />
+      <created>1699508308598</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1699508308599</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,7 +435,8 @@
     <MESSAGE value="adding main database" />
     <MESSAGE value="putting code in methods in app" />
     <MESSAGE value="All bookDao Methods &amp; tests done and genre class created" />
-    <option name="LAST_COMMIT_MESSAGE" value="All bookDao Methods &amp; tests done and genre class created" />
+    <MESSAGE value="done the borrow and return but couldn't find the add/remove book in LibraryApp" />
+    <option name="LAST_COMMIT_MESSAGE" value="done the borrow and return but couldn't find the add/remove book in LibraryApp" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/library4$UserDaoTest.ic" NAME="UserDaoTest Coverage Results" MODIFIED="1698676405237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
