@@ -149,7 +149,7 @@ class LoanFeeDaoTest {
         Date dateOfLoan = new Date(now.getYear() - 1900, 9, 14);
         Date dueDate = new Date(now.getYear() - 1900, 9, 17);
         Date returnDate = null;
-        Loan l1 = new Loan();
+        Loan l1 =  new Loan(3,3,3,dateOfLoan,dueDate,returnDate);
         ArrayList<Loan> expected = new ArrayList();
         expected.add(l1);
         ArrayList<Loan> actual = feeDao.getOverDueLoans(3);

@@ -3,6 +3,8 @@ package daos;
 import business.Book;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class BookDao extends Dao implements BookDaoInterface {
@@ -15,13 +17,13 @@ public class BookDao extends Dao implements BookDaoInterface {
         super(con);
     }
 
-    public Book DisplayAllBook() {
+    public List<Book> DisplayAllBook() {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         int rowsAffected = 0;
         Book b = null;
-
+        ArrayList <Book> books= new ArrayList();
         try {
             con = getConnection();
 
@@ -29,8 +31,9 @@ public class BookDao extends Dao implements BookDaoInterface {
             ps = con.prepareStatement(query);
             rs = ps.executeQuery();
 
-            if (rs.next()) {
+            while (rs.next()) {
                 b = new Book(rs.getInt("bookId"), rs.getInt("genreId"), rs.getString("title"), rs.getString("author"), rs.getInt("numberOfCopies"));
+               books.add(b);
             }
 
         } catch (SQLException e) {
@@ -52,7 +55,7 @@ public class BookDao extends Dao implements BookDaoInterface {
         }
 
 
-        return b;
+        return books;
     }
 
     public int removeBook(int bookId) {

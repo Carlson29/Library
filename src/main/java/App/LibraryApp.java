@@ -47,7 +47,7 @@ public class LibraryApp {
                         //if it's an admin add the options
                         if (u1.getUserType() == 2) {
                             choices2.add("8- add a book to library");
-                            choices2.add("9- Increase a copy of a book");
+                            choices2.add("9- Increase number of copied for a book");
                             choices2.add("10- Disable a member");
                         }
                         while (loggedIn == true) {
@@ -56,7 +56,7 @@ public class LibraryApp {
                             if (choice2 == 0) {
                                 BookDaoInterface bookDao = new BookDao("mainlibrary");
                                 System.out.println("The current books available:");
-                                Book displayedBook = bookDao.DisplayAllBook();
+                                List <Book> displayedBook = bookDao.DisplayAllBook();
                                 System.out.println(displayedBook);
                             }
                             //view details on active loans
@@ -107,17 +107,17 @@ public class LibraryApp {
                             else if (choice2 == 7) {
                                 loggedIn = false;
                             }
-                            //view details on all books as an admin
+                            //add a book to the library
                             else if (choice2 == 8) {
                                 BookDaoInterface bookDao = new BookDao("mainlibrary");
-                                Book displayedBook = bookDao.DisplayAllBook();
+                             List <Book> displayedBook = bookDao.DisplayAllBook();
                                 System.out.println(displayedBook);
                             }
-                            //view details on all active loans as an admin
+                            //increase the number of copies for a book
                             else if (choice2 == 9) {
-                                LoanDaoInterface loanDao = new LoanDao("mainlibrary");
+                                /*LoanDaoInterface loanDao = new LoanDao("mainlibrary");
                                 List<Loan> loans = loanDao.getLoanAsAdmin(u1.getUserType());
-                                showDetailsLoans(loans);
+                                showDetailsLoans(loans);*/
                             }
                             //disable a member
                             else if (choice2 == 10) {
