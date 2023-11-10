@@ -56,7 +56,7 @@ public class LibraryApp {
                             if (choice2 == 0) {
                                 BookDaoInterface bookDao = new BookDao("mainlibrary");
                                 System.out.println("The current books available:");
-                                List <Book> displayedBook = bookDao.DisplayAllBook();
+                                List<Book> displayedBook = bookDao.DisplayAllBook();
                                 System.out.println(displayedBook);
                             }
                             //view details on active loans
@@ -78,8 +78,7 @@ public class LibraryApp {
                                 BookDaoInterface bookDao = new BookDao("mainlibrary");
                                 System.out.println("\nEnter Book ID to Borrow:");
                                 int bookIdToBorrow = sc.nextInt();
-                                System.out.println("Enter User ID:");
-                                int userIdBorrow = sc.nextInt();
+                                int userIdBorrow = u1.getUserId();
                                 System.out.println("\nBorrowing Book (Book ID: " + bookIdToBorrow + ", User ID: " + userIdBorrow + "):");
                                 int borrowRowsAffected = bookDao.borrowBook(bookIdToBorrow, userIdBorrow);
                                 System.out.println("Rows Affected: " + borrowRowsAffected);
@@ -89,8 +88,7 @@ public class LibraryApp {
                                 BookDaoInterface bookDao = new BookDao("mainlibrary");
                                 System.out.print("\nEnter Book ID to Return: ");
                                 int bookIdToReturn = sc.nextInt();
-                                System.out.print("Enter User ID: ");
-                                int userIdForReturn = sc.nextInt();
+                                int userIdForReturn = u1.getUserId();
                                 System.out.println("\nReturning Book (Book ID: " + bookIdToReturn + ", User ID: " + userIdForReturn + "):");
                                 int returnRowsAffected = bookDao.returnBook(bookIdToReturn, userIdForReturn);
                                 System.out.println("Rows Affected: " + returnRowsAffected);
