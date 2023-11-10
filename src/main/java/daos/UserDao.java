@@ -305,7 +305,7 @@ public class UserDao extends Dao implements UserDaoInterface {
         return id;
     }
 
-    /*get a User
+    /**get a User
      *@param userId
      * @return User
      * */
