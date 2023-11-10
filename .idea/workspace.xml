@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="done the borrow and return but couldn't find the add/remove book in LibraryApp">
+    <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App/LibraryApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daos/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/BookDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daos/BookDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/BookDaoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daos/LoanFeeDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/LoanFeeDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -60,7 +60,6 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/user/OneDrive - Dundalk Institute of Technology/d00243400/Y3/web patterns/library",
     "node.js.detected.package.eslint": "true",
@@ -89,22 +88,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookDaoTest.testAddBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="daos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="daos" />
-      <option name="MAIN_CLASS_NAME" value="daos.BookDaoTest" />
-      <option name="METHOD_NAME" value="testAddBook" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,6 +123,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MockTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="daos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="daos" />
+      <option name="MAIN_CLASS_NAME" value="daos.MockTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="library" />
       <extension name="coverage">
@@ -158,7 +156,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.LibraryApp" />
-        <item itemvalue="JUnit.BookDaoTest.testAddBook" />
+        <item itemvalue="JUnit.MockTest" />
         <item itemvalue="JUnit.UserDaoTest" />
         <item itemvalue="JUnit.LoanFeeDaoTest" />
         <item itemvalue="JUnit.LoanFeeDaoTest.getOverDueLoans_WhenNoLoanIsPresent" />
@@ -192,7 +190,10 @@
       <workItem from="1699202147765" duration="912000" />
       <workItem from="1699204177983" duration="3834000" />
       <workItem from="1699295068717" duration="12870000" />
-      <workItem from="1699487708766" duration="1407000" />
+      <workItem from="1699487708766" duration="1602000" />
+      <workItem from="1699525232734" duration="1808000" />
+      <workItem from="1699547298138" duration="1445000" />
+      <workItem from="1699640827299" duration="4492000" />
     </task>
     <task id="LOCAL-00001" summary="running test">
       <option name="closed" value="true" />
@@ -370,45 +371,45 @@
       <option name="project" value="LOCAL" />
       <updated>1699487775884</updated>
     </task>
-    <task id="LOCAL-00023" summary="putting code in methods in app">
+    <task id="LOCAL-00023" summary="changing database name in app">
       <option name="closed" value="true" />
-      <created>1699503372263</created>
+      <created>1699489168530</created>
       <option name="number" value="00023" />
       <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1699503372263</updated>
+      <updated>1699489168530</updated>
     </task>
-    <task id="LOCAL-00024" summary="putting code in methods in app">
+    <task id="LOCAL-00024" summary="changing database name in app">
       <option name="closed" value="true" />
-      <created>1699505053545</created>
+      <created>1699525289098</created>
       <option name="number" value="00024" />
       <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
-      <updated>1699505053545</updated>
+      <updated>1699525289098</updated>
     </task>
-    <task id="LOCAL-00025" summary="All bookDao Methods &amp; tests done and genre class created">
+    <task id="LOCAL-00025" summary="formatting the app">
       <option name="closed" value="true" />
-      <created>1699505262486</created>
+      <created>1699525794280</created>
       <option name="number" value="00025" />
       <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
-      <updated>1699505262486</updated>
+      <updated>1699525794280</updated>
     </task>
-    <task id="LOCAL-00026" summary="done the borrow and return but couldn't find the add/remove book in LibraryApp">
+    <task id="LOCAL-00026" summary="formatting the app">
       <option name="closed" value="true" />
-      <created>1699508308598</created>
+      <created>1699640855601</created>
       <option name="number" value="00026" />
       <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
-      <updated>1699508308599</updated>
+      <updated>1699640855601</updated>
     </task>
-    <task id="LOCAL-00027" summary="done the borrow and return but couldn't find the add/remove book in LibraryApp">
+    <task id="LOCAL-00027" summary="fixing broken code">
       <option name="closed" value="true" />
-      <created>1699654619857</created>
+      <created>1699643940699</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1699654619858</updated>
+      <updated>1699643940699</updated>
     </task>
     <option name="localTasksCounter" value="28" />
     <servers />
@@ -442,22 +443,12 @@
     <MESSAGE value="adding comments" />
     <MESSAGE value="adding more comments" />
     <MESSAGE value="fixing test" />
-    <MESSAGE value="adding main database" />
     <MESSAGE value="putting code in methods in app" />
-    <MESSAGE value="All bookDao Methods &amp; tests done and genre class created" />
-    <MESSAGE value="done the borrow and return but couldn't find the add/remove book in LibraryApp" />
-    <option name="LAST_COMMIT_MESSAGE" value="done the borrow and return but couldn't find the add/remove book in LibraryApp" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/daos/BookDao.java</url>
-          <line>149</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="adding main database" />
+    <MESSAGE value="changing database name in app" />
+    <MESSAGE value="formatting the app" />
+    <MESSAGE value="fixing broken code" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing broken code" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/library4$UserDaoTest.ic" NAME="UserDaoTest Coverage Results" MODIFIED="1698676405237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

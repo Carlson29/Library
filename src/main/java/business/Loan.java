@@ -1,6 +1,6 @@
 package business;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.Objects;
 
 public class Loan {
@@ -14,6 +14,15 @@ public class Loan {
 
     public Loan() {
 
+    }
+
+    public Loan(int loanId,int bookId, int userId, Date dateOfLoan, Date dueDate, Date returnDate){
+        this.loanId = loanId;
+        this.bookId = bookId;
+        this.userId = userId;
+        this.dateOfLoan = dateOfLoan;
+        this.dueDate = dueDate;
+        this.returnDate = returnDate;
     }
 
     public int getLoanId() {

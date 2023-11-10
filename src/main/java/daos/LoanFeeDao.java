@@ -214,7 +214,7 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface {
             rs = ps.executeQuery();
 
             if (rs.next()) {
-                l = new Loan();
+                 l = new Loan(rs.getInt("loanId"),rs.getInt("bookId"),rs.getInt("userId"),rs.getDate("dateOfLoan"),rs.getDate("dueDate"),rs.getDate("returnDate"));
             }
 
         } catch (SQLException e) {
@@ -307,7 +307,7 @@ public class LoanFeeDao extends Dao implements LoanFeeDaoInterface {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                Loan l = new Loan();
+                Loan l = new Loan(rs.getInt("loanId"),rs.getInt("bookId"),rs.getInt("userId"),rs.getDate("dateOfLoan"),rs.getDate("dueDate"),rs.getDate("returnDate"));
                 loans.add(l);
             }
 

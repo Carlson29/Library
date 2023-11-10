@@ -1,6 +1,7 @@
 package App;
 
 import java.util.Scanner;
+
 import business.Book;
 import business.Loan;
 import business.User;
@@ -46,7 +47,7 @@ public class LibraryApp {
                         //if it's an admin add the options
                         if (u1.getUserType() == 2) {
                             choices2.add("8- add a book to library");
-                            choices2.add("9- Increase a copy of a book");
+                            choices2.add("9- Increase number of copied for a book");
                             choices2.add("10- Disable a member");
                         }
                         while (loggedIn == true) {
@@ -55,8 +56,8 @@ public class LibraryApp {
                             if (choice2 == 0) {
                                 BookDaoInterface bookDao = new BookDao("mainlibrary");
                                 System.out.println("The current books available:");
-                                //List<Book> books = bookDao.DisplayAllBook();
-                               // showAllBooks(books);
+                                List <Book> displayedBook = bookDao.DisplayAllBook();
+                                System.out.println(displayedBook);
                             }
                             //view details on active loans
                             else if (choice2 == 1) {
@@ -106,17 +107,17 @@ public class LibraryApp {
                             else if (choice2 == 7) {
                                 loggedIn = false;
                             }
-                            //Add a book
+                            //add a book to the library
                             else if (choice2 == 8) {
                                 BookDaoInterface bookDao = new BookDao("mainlibrary");
-
-                               // System.out.println(displayedBook);
+                             List <Book> displayedBook = bookDao.DisplayAllBook();
+                                System.out.println(displayedBook);
                             }
-                            //view details on all active loans as an admin
+                            //increase the number of copies for a book
                             else if (choice2 == 9) {
-                                LoanDaoInterface loanDao = new LoanDao("mainlibrary");
+                                /*LoanDaoInterface loanDao = new LoanDao("mainlibrary");
                                 List<Loan> loans = loanDao.getLoanAsAdmin(u1.getUserType());
-                                showDetailsLoans(loans);
+                                showDetailsLoans(loans);*/
                             }
                             //disable a member
                             else if (choice2 == 10) {
@@ -502,16 +503,6 @@ public class LibraryApp {
             System.out.println("Date of loan: " + l.getDateOfLoan());
             System.out.println("Due date: " + l.getDueDate());
             System.out.println("Return date: " + l.getReturnDate());
-        }
-    }
-
-    public static void showAllBooks(List<Book>book) {
-        for (Book b : book) {
-            System.out.println("Book ID:" + b.getBookId());
-            System.out.println("Genre ID:" + b.getGenreId());
-            System.out.println("Title:" + b.getTitle());
-            System.out.println("Author:" + b.getAuthor());
-            System.out.println("No. of Copies:" + b.getNumberOfCopies());
         }
     }
 }

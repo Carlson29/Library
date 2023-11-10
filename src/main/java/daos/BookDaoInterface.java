@@ -2,8 +2,10 @@ package daos;
 
 import business.Book;
 
+import java.util.List;
+
 public interface BookDaoInterface {
-    public Book DisplayAllBook();
+    public List<Book> DisplayAllBook();
 
     public int removeBook(int bookId);
 
