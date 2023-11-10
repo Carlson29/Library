@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8437e807-467b-4418-a524-1e6dd56f3925" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/LoanFeeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daos/LoanFeeDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daos/LoanFeeDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +60,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/user/Downloads/productEntity",
+    "last_opened_file_path": "C:/Users/user/OneDrive - Dundalk Institute of Technology/d00243400/Y3/web patterns/library",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,7 +77,7 @@
       <recent name="daos" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserDaoTest">
+  <component name="RunManager" selected="Application.LibraryApp">
     <configuration name="LibraryApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App.LibraryApp" />
       <module name="library" />
@@ -152,9 +155,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LibraryApp" />
         <item itemvalue="JUnit.UserDaoTest" />
         <item itemvalue="JUnit.LoanFeeDaoTest" />
-        <item itemvalue="Application.LibraryApp" />
         <item itemvalue="JUnit.LoanFeeDaoTest.getOverDueLoans_WhenNoLoanIsPresent" />
         <item itemvalue="JUnit.LoanFeeDaoTest.getBookName_whenBookIsNotPresent" />
       </list>
@@ -190,6 +193,7 @@
       <workItem from="1699487708766" duration="1602000" />
       <workItem from="1699525232734" duration="1808000" />
       <workItem from="1699547298138" duration="1445000" />
+      <workItem from="1699640827299" duration="3084000" />
     </task>
     <task id="LOCAL-00001" summary="running test">
       <option name="closed" value="true" />
@@ -391,7 +395,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699525794280</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="formatting the app">
+      <option name="closed" value="true" />
+      <created>1699640855601</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1699640855601</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

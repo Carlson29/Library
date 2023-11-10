@@ -27,10 +27,10 @@ class LoanFeeDaoTest {
         assertEquals(actual, expected);
         if (actual == expected) {
             LocalDateTime now = LocalDateTime.now();
-            Date dateOfLoan = new Date(2023 - 1900, 9, 16);
-            Date dueDate = new Date(2023 - 1900, 9, 20);
+            Date dateOfLoan = new Date(now.getYear() - 1900, 9, 16);
+            Date dueDate = new Date(now.getYear() - 1900, 9, 20);
             Date returnDate = new Date(now.getYear() - 1900, now.getMonthValue() - 1, now.getDayOfMonth());
-            Loan expected1 = new Loan();
+            Loan expected1 = new Loan(1,1,1,dateOfLoan,dueDate,returnDate);
             Loan actual1 = feeDao.getLoan(1);
             assertEquals(expected1, actual1);
         }
@@ -74,10 +74,11 @@ class LoanFeeDaoTest {
         int expected = 1;
         assertEquals(actual, expected);
         if (actual == expected) {
-            Date dateOfLoan = new Date(2023 - 1900, 9, 16);
-            Date dueDate = new Date(2023 - 1900, 9, 20);
+            LocalDateTime now = LocalDateTime.now();
+            Date dateOfLoan = new Date(now.getYear() - 1900, 9, 16);
+            Date dueDate = new Date(now.getYear() - 1900, 9, 20);
             Date returnDate = null;
-            Loan expected1 = new Loan();
+            Loan expected1 = new Loan(1,1,1,dateOfLoan,dueDate,returnDate);
             Loan actual1 = feeDao.getLoan(1);
             assertEquals(expected1, actual1);
         }
@@ -123,10 +124,10 @@ class LoanFeeDaoTest {
     void getLoan() {
         LoanFeeDao feeDao = new LoanFeeDao("library");
         LocalDateTime now = LocalDateTime.now();
-        Date dateOfLoan = new Date(2023 - 1900, 9, 16);
-        Date dueDate = new Date(2023 - 1900, 9, 20);
+        Date dateOfLoan = new Date(now.getYear() - 1900, 9, 16);
+        Date dueDate = new Date(now.getYear() - 1900, 9, 20);
         Date returnDate = new Date(now.getYear() - 1900, now.getMonthValue() - 1, now.getDayOfMonth());
-        Loan expected = new Loan();
+        Loan expected = new Loan(1,1,1,dateOfLoan,dueDate,returnDate);
         Loan actual = feeDao.getLoan(1);
         assertEquals(expected, actual);
     }
