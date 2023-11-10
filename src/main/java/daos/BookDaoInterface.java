@@ -12,4 +12,6 @@ public interface BookDaoInterface {
    public int borrowBook(int bookId, int userId);
 
     public  int returnBook(int bookId,int userId);
+
+    public int UpdateNumberOfCopies(int bookId, int newNumberOfCopies);
 }

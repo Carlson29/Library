@@ -252,5 +252,41 @@ public class BookDao extends Dao implements BookDaoInterface {
 
         return rowsAffected;
     }
+
+    public int UpdateNumberOfCopies(int bookId, int newNumberOfCopies) {
+        Connection con = null;
+        PreparedStatement ps = null;
+        int rowsAffected = 0;
+
+        try {
+            con = getConnection();
+
+            // Allows for the increase or decease of the No. of copies for the specified bookId
+            String query = "UPDATE books SET numberOfCopies = ? WHERE bookId = ?";
+            ps = con.prepareStatement(query);
+            ps.setInt(1, newNumberOfCopies);
+            ps.setInt(2, bookId);
+
+            // Execute the update query
+            rowsAffected = ps.executeUpdate();
+
+        } catch (SQLException e) {
+            System.err.println("Exception occurred in the UpdateNumberOfCopies method: " + e.getMessage());
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    freeConnection(con);
+                }
+            } catch (SQLException e) {
+                System.err.println("Exception occurred when closing down the UpdateNumberOfCopies method:\n" + e.getMessage());
+            }
+        }
+
+        return rowsAffected;
+    }
+
 }
 
